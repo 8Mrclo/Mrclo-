@@ -193,3 +193,18 @@ static func clear(node: Node) -> void:
 	for c in node.get_children():
 		node.remove_child(c)
 		c.queue_free()
+
+
+## Safe-area insets (notches, gesture bars) converted to viewport units.
+static func safe_insets(vp: Viewport) -> Dictionary:
+	var screen := DisplayServer.screen_get_size()
+	var safe := DisplayServer.get_display_safe_area()
+	var vsize := vp.get_visible_rect().size
+	if screen.x <= 0 or screen.y <= 0 or safe.size.x <= 0 or not OS.has_feature("mobile"):
+		return {"top": 0.0, "bottom": 0.0, "left": 0.0, "right": 0.0}
+	var sx := vsize.x / screen.x
+	var sy := vsize.y / screen.y
+	return {
+		"top": safe.position.y * sy, "bottom": (screen.y - safe.end.y) * sy,
+		"left": safe.position.x * sx, "right": (screen.x - safe.end.x) * sx,
+	}
