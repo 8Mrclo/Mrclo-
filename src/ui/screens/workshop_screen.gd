@@ -4,6 +4,7 @@ extends ScreenBase
 
 var _tab := "upgrade"
 var _selection: Dictionary = {}
+var _branch := "survival"
 
 
 func build() -> void:
@@ -144,7 +145,10 @@ func _build_research() -> void:
 	bal.add_child(UIKit.label(Loc.t("research.balance"), 20, Palette.text_muted()))
 	bal.add_child(UIKit.amounts_row({"field_data": Economy.balance("field_data"), "scrap": Economy.balance("scrap")}, 20))
 	body.add_child(bal)
+	var branches: Array = Content.research_meta.get("branches", [])
+	body.add_child(tabs(branches.map(func(b): return b.id), branches.map(func(b): return Loc.text(b.name)), _branch, func(id): _branch = id; rebuild()))
 	var tree := ResearchTreeView.new()
+	tree.branch = _branch
 	tree.build()
 	tree.node_pressed.connect(_research_details)
 	var sc := ScrollContainer.new()

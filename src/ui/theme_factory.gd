@@ -4,6 +4,20 @@ extends RefCounted
 ## Rounded-diagonal modular panels; buttons have pressed/hover/disabled states.
 
 
+static var _shared: Theme
+
+
+## Cached theme for Controls under CanvasLayers (they don't inherit root theme).
+static func shared() -> Theme:
+	if _shared == null:
+		_shared = build()
+	return _shared
+
+
+static func invalidate() -> void:
+	_shared = null
+
+
 static func build() -> Theme:
 	var th := Theme.new()
 	th.default_font_size = 24

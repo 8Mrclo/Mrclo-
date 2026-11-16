@@ -34,7 +34,10 @@ func run() -> Dictionary:
 	Settings.apply_all()
 	InputSetup.ensure_actions()
 	DebugTools.invincible = invincible
-	Game.pending_run = Missions.build_run_config(map_id, mode_id, "normal", 1234)
+	if map_id.begins_with("lab:"):
+		Game.pending_run = BattleLab.config(map_id.substr(4))
+	else:
+		Game.pending_run = Missions.build_run_config(map_id, mode_id, "normal", 1234)
 	if pre_battle.is_valid():
 		pre_battle.call(Game.pending_run)
 	var battle: Battle = load("res://scenes/battle/battle.tscn").instantiate()

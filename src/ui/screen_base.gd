@@ -96,7 +96,7 @@ func tabs(ids: Array, labels: Array, selected: String, on_select: Callable) -> C
 	for i in ids.size():
 		var b := UIKit.button(labels[i], func(): on_select.call(ids[i]), "secondary" if ids[i] == selected else "ghost", 56)
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		b.clip_text = true
+		b.add_theme_font_size_override("font_size", 20)
 		if ids[i] == selected:
 			b.add_theme_stylebox_override("normal", UIKit.box(Palette.PETROL_LIGHT, Palette.AMBER, 2, 14))
 		row.add_child(b)

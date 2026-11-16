@@ -17,6 +17,7 @@ static func _layer(title_text: String) -> Dictionary:
 	layer.add_child(dim)
 	var center := CenterContainer.new()
 	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	center.theme = ThemeFactory.shared()
 	layer.add_child(center)
 	var panel := PanelContainer.new()
 	panel.custom_minimum_size = Vector2(600, 0)

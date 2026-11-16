@@ -15,6 +15,8 @@ func setup(t: Node2D, bounds: Rect2) -> void:
 	limit_top = int(bounds.position.y)
 	limit_right = int(bounds.end.x)
 	limit_bottom = int(bounds.end.y)
+	var z := float(Content.balance_value("run.camera_zoom", 1.0))
+	zoom = Vector2(z, z)
 	position_smoothing_enabled = true
 	position_smoothing_speed = 9.0
 

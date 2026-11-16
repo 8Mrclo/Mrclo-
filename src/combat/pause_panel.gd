@@ -23,6 +23,7 @@ func setup(b: Battle) -> void:
 		margin.add_theme_constant_override("margin_" + s, 28)
 	margin.add_theme_constant_override("margin_top", 120)
 	margin.add_theme_constant_override("margin_bottom", 60)
+	margin.theme = ThemeFactory.shared()
 	add_child(margin)
 	_box = UIKit.vbox(14)
 	margin.add_child(UIKit.scroll(_box))

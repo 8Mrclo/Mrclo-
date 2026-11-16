@@ -42,6 +42,7 @@ func _build() -> void:
 	panel.add_theme_stylebox_override("panel", UIKit.box(Color(0.02, 0.02, 0.05, 0.94), Palette.AMBER, 2, 12))
 	panel.position = Vector2(20, 120)
 	panel.custom_minimum_size = Vector2(680, 0)
+	panel.theme = ThemeFactory.shared()
 	_layer.add_child(panel)
 	var v := UIKit.vbox(8)
 	panel.add_child(v)
@@ -69,6 +70,7 @@ func _build() -> void:
 		["debug.offline", func(): _simulate_offline()],
 		["debug.unlock_maps", func(): _unlock_maps()],
 		["debug.reset_save", func(): Dialogs.typed_confirm(Loc.t("settings.delete_title"), Loc.t("settings.delete_body"), Loc.t("settings.delete_word"), func(): Saves.wipe_and_reset(); Router.goto("boot"))],
+		["lab.title", func(): toggle(); Router.goto("lab")],
 		["common.close", func(): toggle()],
 	]
 	for c in cmds:

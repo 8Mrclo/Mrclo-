@@ -28,14 +28,16 @@ func setup(b: Battle) -> void:
 		margin.add_theme_constant_override("margin_" + side, 24)
 	margin.add_theme_constant_override("margin_top", 110)
 	margin.add_theme_constant_override("margin_bottom", 60)
+	margin.theme = ThemeFactory.shared()
 	add_child(margin)
 	var v := UIKit.vbox(16)
 	margin.add_child(v)
 	_title = UIKit.title("")
 	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(_title)
-	_cards = UIKit.vbox(14)
+	_cards = UIKit.vbox(16)
 	_cards.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_cards.alignment = BoxContainer.ALIGNMENT_CENTER
 	v.add_child(_cards)
 	var row := UIKit.hbox(12)
 	_reroll_btn = UIKit.button("", _do_reroll, "secondary")
@@ -97,21 +99,19 @@ func _card(offer: Dictionary) -> Control:
 		"fallback":
 			accent = Palette.GREEN
 			tag = Loc.t("levelup.supply")
-	var b := Button.new()
-	b.custom_minimum_size = Vector2(0, 190)
-	b.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	b.add_theme_stylebox_override("normal", UIKit.box(Palette.panel_bg(), accent, 3, 22))
-	b.add_theme_stylebox_override("hover", UIKit.box(Palette.panel_alt(), Color.WHITE, 3, 22))
-	b.add_theme_stylebox_override("pressed", UIKit.box(Palette.PETROL, Palette.AMBER, 4, 22))
-	b.add_theme_stylebox_override("focus", UIKit.box(Color(0, 0, 0, 0), Palette.AMBER, 4, 22))
+	# PanelContainer sizes to its content; a flat Button on top catches taps.
+	var card := PanelContainer.new()
+	card.custom_minimum_size = Vector2(0, 170)
+	card.add_theme_stylebox_override("panel", UIKit.box(Palette.panel_bg(), accent, 3, 22))
 	var h := UIKit.hbox(16)
-	h.set_anchors_preset(Control.PRESET_FULL_RECT)
-	h.offset_left = 18
-	h.offset_right = -18
-	h.offset_top = 14
-	h.offset_bottom = -14
 	h.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	b.add_child(h)
+	card.add_child(h)
+	var b := Button.new()
+	b.flat = true
+	b.add_theme_stylebox_override("hover", UIKit.box(Color(1, 1, 1, 0.05), Color.WHITE, 3, 22))
+	b.add_theme_stylebox_override("pressed", UIKit.box(Color(1, 1, 1, 0.08), Palette.AMBER, 4, 22))
+	b.add_theme_stylebox_override("focus", UIKit.box(Color(0, 0, 0, 0), Palette.AMBER, 4, 22))
+	b.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 	var ic := UIKit.icon_from(def, 92, accent)
 	ic.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	h.add_child(ic)
@@ -125,8 +125,9 @@ func _card(offer: Dictionary) -> Control:
 	top.add_child(UIKit.label(tag, 20, accent))
 	v.add_child(top)
 	v.add_child(UIKit.label(Loc.text(def.get("desc", "")), 21, Palette.text_muted(), true))
-	for line in UpgradeOffer.diff_lines(offer):
-		v.add_child(UIKit.label("▸ " + line, 20, Palette.MINT, true))
+	var lines := UpgradeOffer.diff_lines(offer)
+	for i in mini(lines.size(), 3):
+		v.add_child(UIKit.label("▸ " + lines[i], 20, Palette.MINT, true))
 	var hint := _evolution_hint(offer)
 	if hint != "":
 		v.add_child(UIKit.label(hint, 19, Palette.AMBER, true))
@@ -134,7 +135,8 @@ func _card(offer: Dictionary) -> Control:
 		if c is Control:
 			c.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	b.pressed.connect(func(): _pick(offer))
-	return b
+	card.add_child(b)
+	return card
 
 
 func _evolution_hint(offer: Dictionary) -> String:

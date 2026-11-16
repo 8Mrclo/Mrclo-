@@ -74,7 +74,8 @@ func _toggle(label_key: String, key: String, rebuild_theme: bool = false) -> Con
 	c.toggled.connect(func(v):
 		Settings.set_value(key, v)
 		if rebuild_theme:
-			get_tree().root.theme = ThemeFactory.build()
+			ThemeFactory.invalidate()
+			get_tree().root.theme = ThemeFactory.shared()
 			queue_rebuild())
 	return c
 

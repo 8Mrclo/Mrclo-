@@ -23,6 +23,7 @@ const SCENES := {
 	"reward_reveal": "res://scenes/ui/reward_reveal.tscn",
 	"tutorial": "res://scenes/ui/tutorial.tscn",
 	"credits": "res://scenes/ui/credits.tscn",
+	"lab": "res://tests/scenes/lab_launcher.tscn",
 }
 
 ## Hub screens share the bottom navigation and never stack on each other.
@@ -35,6 +36,7 @@ var _overlay: CanvasLayer
 var _fade: ColorRect
 var _toasts: VBoxContainer
 var _busy := false
+var _queued: Array = []
 
 
 func _ready() -> void:
@@ -53,6 +55,7 @@ func _ready() -> void:
 	_toasts.custom_minimum_size = Vector2(600, 0)
 	_toasts.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_toasts.add_theme_constant_override("separation", 8)
+	_toasts.theme = ThemeFactory.shared()
 	_overlay.add_child(_toasts)
 	EventBus.toast_requested.connect(_on_toast)
 	get_viewport().size_changed.connect(_layout_overlay)
@@ -64,6 +67,7 @@ func goto(id: String, p: Dictionary = {}, push_history: bool = true) -> void:
 		push_error("Router: tela desconhecida %s" % id)
 		return
 	if _busy:
+		_queued = [id, p, push_history]
 		return
 	_busy = true
 	if push_history and current_id != "" and current_id != id:
@@ -90,6 +94,10 @@ func goto(id: String, p: Dictionary = {}, push_history: bool = true) -> void:
 	else:
 		_fade.color.a = 0.0
 	_busy = false
+	if not _queued.is_empty():
+		var q := _queued
+		_queued = []
+		goto(q[0], q[1], q[2])
 
 
 func back() -> void:

@@ -21,7 +21,7 @@
     "elite_drop": "data_cache",
     "max_xp_pickups": 260,
     "player_radius": 18,
-    "camera_zoom": 1.0,
+    "camera_zoom": 1.15,
     "spawn_margin": 90,
     "spawn_min_player_distance": 380,
     "enemy_separation": 0.55,

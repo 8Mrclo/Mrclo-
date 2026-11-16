@@ -19,7 +19,8 @@ func _ready() -> void:
 	var report := Saves.load_profile()
 	Game.boot_report = report
 	Settings.apply_all()
-	get_tree().root.theme = ThemeFactory.build()
+	ThemeFactory.invalidate()
+	get_tree().root.theme = ThemeFactory.shared()
 	Objectives.refresh_periods()
 	_daily_login()
 	Game.touch_clock()

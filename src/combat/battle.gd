@@ -87,6 +87,8 @@ func _ready() -> void:
 	_build_systems()
 	_build_ui()
 	loadout.add_active(Content.agent(player.agent_id).start_ability)
+	if cfg.has("lab"):
+		BattleLab.apply(self, str(cfg.lab))
 	Audio.play_music("battle")
 	Audio.set_duck(false)
 	Tutorial.notify_context("battle_start")
@@ -202,7 +204,10 @@ func _process(raw_delta: float) -> void:
 		_moved = true
 		Tutorial.complete("move")
 	player.update(delta, input, arena, hazards.player_slow, traits.regen_mult())
-	director.update(delta)
+	if not cfg.get("no_director", false):
+		director.update(delta)
+	if cfg.has("lab"):
+		BattleLab.tick(self, delta)
 	enemies.update(delta, frame)
 	loadout.update(delta)
 	projectiles.update(delta)
