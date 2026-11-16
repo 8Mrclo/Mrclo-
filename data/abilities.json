@@ -1,0 +1,213 @@
+{
+  "_doc": "Habilidades ativas (5 níveis), módulos passivos (5 níveis) e evoluções. 'behavior' mapeia para src/abilities/behaviors. Parâmetros por nível são exibidos automaticamente como 'próximo efeito'.",
+  "actives": [
+    {
+      "id": "disc_helix", "behavior": "orbit", "tags": ["orbit"],
+      "name": {"pt_BR": "Disco Helicoidal", "en": "Helix Disc"},
+      "desc": {"pt_BR": "Discos orbitam o agente e atingem inimigos próximos.", "en": "Discs orbit the agent and hit nearby enemies."},
+      "icon": {"shape": "orbit", "color": "#3fd0c9"},
+      "levels": [
+        {"damage": 11, "count": 2, "orbit_radius": 92, "rot_speed": 3.0, "hit_interval": 0.55, "size": 16, "uptime": 4.0, "downtime": 2.5},
+        {"damage": 14, "count": 3, "orbit_radius": 96, "rot_speed": 3.1, "hit_interval": 0.5, "size": 17, "uptime": 4.5, "downtime": 2.3},
+        {"damage": 17, "count": 3, "orbit_radius": 104, "rot_speed": 3.3, "hit_interval": 0.48, "size": 18, "uptime": 5.0, "downtime": 2.0},
+        {"damage": 21, "count": 4, "orbit_radius": 110, "rot_speed": 3.5, "hit_interval": 0.45, "size": 19, "uptime": 5.5, "downtime": 1.8},
+        {"damage": 26, "count": 5, "orbit_radius": 118, "rot_speed": 3.8, "hit_interval": 0.42, "size": 20, "uptime": 6.0, "downtime": 1.5}
+      ]
+    },
+    {
+      "id": "ion_arc", "behavior": "chain", "tags": ["electric"],
+      "name": {"pt_BR": "Arco de Íons", "en": "Ion Arc"},
+      "desc": {"pt_BR": "Descarga elétrica que salta entre alvos.", "en": "Electric discharge that jumps between targets."},
+      "icon": {"shape": "bolt", "color": "#7cf5d0"},
+      "levels": [
+        {"damage": 15, "cooldown": 1.5, "range": 360, "jumps": 2, "jump_range": 150, "bolts": 1},
+        {"damage": 19, "cooldown": 1.4, "range": 370, "jumps": 3, "jump_range": 160, "bolts": 1},
+        {"damage": 23, "cooldown": 1.3, "range": 380, "jumps": 4, "jump_range": 170, "bolts": 1},
+        {"damage": 28, "cooldown": 1.2, "range": 400, "jumps": 4, "jump_range": 180, "bolts": 2},
+        {"damage": 34, "cooldown": 1.1, "range": 420, "jumps": 6, "jump_range": 190, "bolts": 2}
+      ]
+    },
+    {
+      "id": "coral_probe", "behavior": "drone", "tags": ["device", "projectile"],
+      "name": {"pt_BR": "Sonda Coral", "en": "Coral Probe"},
+      "desc": {"pt_BR": "Drone autônomo que dispara em alvos prioritários.", "en": "Autonomous drone that fires at priority targets."},
+      "icon": {"shape": "drone", "color": "#ff6f61"},
+      "levels": [
+        {"damage": 10, "count": 1, "fire_interval": 0.75, "range": 420, "proj_speed": 640, "pierce": 0},
+        {"damage": 12, "count": 1, "fire_interval": 0.62, "range": 440, "proj_speed": 660, "pierce": 1},
+        {"damage": 14, "count": 2, "fire_interval": 0.62, "range": 460, "proj_speed": 680, "pierce": 1},
+        {"damage": 17, "count": 2, "fire_interval": 0.52, "range": 480, "proj_speed": 700, "pierce": 1},
+        {"damage": 20, "count": 3, "fire_interval": 0.48, "range": 500, "proj_speed": 740, "pierce": 2}
+      ]
+    },
+    {
+      "id": "photon_line", "behavior": "beam", "tags": ["beam"],
+      "name": {"pt_BR": "Linha de Fótons", "en": "Photon Line"},
+      "desc": {"pt_BR": "Feixe periódico que atravessa a arena.", "en": "Periodic beam that crosses the arena."},
+      "icon": {"shape": "beam", "color": "#ffb547"},
+      "levels": [
+        {"damage": 26, "cooldown": 3.2, "length": 900, "width": 26, "beams": 1, "sweep": 0},
+        {"damage": 32, "cooldown": 3.0, "length": 960, "width": 28, "beams": 1, "sweep": 0},
+        {"damage": 38, "cooldown": 2.8, "length": 1020, "width": 30, "beams": 2, "sweep": 0},
+        {"damage": 46, "cooldown": 2.6, "length": 1080, "width": 34, "beams": 2, "sweep": 0},
+        {"damage": 56, "cooldown": 2.3, "length": 1160, "width": 38, "beams": 3, "sweep": 0}
+      ]
+    },
+    {
+      "id": "seismic_capsule", "behavior": "lob", "tags": ["explosive", "projectile"],
+      "name": {"pt_BR": "Cápsula Sísmica", "en": "Seismic Capsule"},
+      "desc": {"pt_BR": "Projétil que cria ondas de choque ao tocar o solo.", "en": "Shell that releases shockwaves on landing."},
+      "icon": {"shape": "capsule", "color": "#ff9a5a"},
+      "levels": [
+        {"damage": 24, "cooldown": 2.4, "radius": 80, "count": 1, "waves": 1, "range": 420},
+        {"damage": 29, "cooldown": 2.2, "radius": 88, "count": 1, "waves": 2, "range": 440},
+        {"damage": 34, "cooldown": 2.1, "radius": 96, "count": 2, "waves": 2, "range": 460},
+        {"damage": 40, "cooldown": 1.9, "radius": 104, "count": 2, "waves": 3, "range": 480},
+        {"damage": 48, "cooldown": 1.7, "radius": 115, "count": 3, "waves": 3, "range": 500}
+      ]
+    },
+    {
+      "id": "cryo_mist", "behavior": "zone_slow", "tags": ["zone", "cold"],
+      "name": {"pt_BR": "Bruma Criogênica", "en": "Cryo Mist"},
+      "desc": {"pt_BR": "Zona móvel que reduz a velocidade dos inimigos.", "en": "Moving zone that slows enemies."},
+      "icon": {"shape": "mist", "color": "#9fe3ff"},
+      "levels": [
+        {"dps": 8, "radius": 105, "slow": 0.35, "count": 1, "tick": 0.4, "drift": 140},
+        {"dps": 10, "radius": 115, "slow": 0.4, "count": 1, "tick": 0.4, "drift": 150},
+        {"dps": 13, "radius": 125, "slow": 0.45, "count": 2, "tick": 0.38, "drift": 160},
+        {"dps": 16, "radius": 135, "slow": 0.5, "count": 2, "tick": 0.36, "drift": 170},
+        {"dps": 20, "radius": 150, "slow": 0.55, "count": 3, "tick": 0.34, "drift": 180}
+      ]
+    },
+    {
+      "id": "prism_shard", "behavior": "split", "tags": ["projectile", "crystal"],
+      "name": {"pt_BR": "Estilhaço Prisma", "en": "Prism Shard"},
+      "desc": {"pt_BR": "Projéteis que se dividem após atingir um alvo.", "en": "Projectiles that split on hit."},
+      "icon": {"shape": "prism", "color": "#c79bff"},
+      "levels": [
+        {"damage": 14, "cooldown": 1.0, "count": 1, "splits": 2, "shard_pct": 0.45, "proj_speed": 620},
+        {"damage": 17, "cooldown": 0.95, "count": 1, "splits": 3, "shard_pct": 0.45, "proj_speed": 640},
+        {"damage": 20, "cooldown": 0.9, "count": 2, "splits": 3, "shard_pct": 0.5, "proj_speed": 660},
+        {"damage": 24, "cooldown": 0.85, "count": 2, "splits": 4, "shard_pct": 0.5, "proj_speed": 680},
+        {"damage": 29, "cooldown": 0.78, "count": 3, "splits": 4, "shard_pct": 0.55, "proj_speed": 720}
+      ]
+    },
+    {
+      "id": "reverse_pulse", "behavior": "nova", "tags": ["area"],
+      "name": {"pt_BR": "Pulso Reverso", "en": "Reverse Pulse"},
+      "desc": {"pt_BR": "Explosão ao redor do agente que empurra inimigos.", "en": "Blast around the agent that pushes enemies away."},
+      "icon": {"shape": "nova", "color": "#ff6f61"},
+      "levels": [
+        {"damage": 18, "cooldown": 3.0, "radius": 150, "knockback": 260},
+        {"damage": 23, "cooldown": 2.8, "radius": 165, "knockback": 280},
+        {"damage": 28, "cooldown": 2.6, "radius": 180, "knockback": 300},
+        {"damage": 34, "cooldown": 2.4, "radius": 195, "knockback": 320},
+        {"damage": 42, "cooldown": 2.1, "radius": 215, "knockback": 350}
+      ]
+    },
+    {
+      "id": "echo_mine", "behavior": "trail_mine", "tags": ["device", "explosive"],
+      "name": {"pt_BR": "Mina de Eco", "en": "Echo Mine"},
+      "desc": {"pt_BR": "Minas surgem na trajetória percorrida.", "en": "Mines appear along your path."},
+      "icon": {"shape": "mine", "color": "#ffb547"},
+      "levels": [
+        {"damage": 30, "drop_distance": 150, "radius": 75, "arm_time": 0.5, "max_mines": 6, "lifetime": 10},
+        {"damage": 36, "drop_distance": 140, "radius": 80, "arm_time": 0.45, "max_mines": 8, "lifetime": 11},
+        {"damage": 43, "drop_distance": 125, "radius": 88, "arm_time": 0.4, "max_mines": 10, "lifetime": 12},
+        {"damage": 51, "drop_distance": 115, "radius": 96, "arm_time": 0.35, "max_mines": 12, "lifetime": 13},
+        {"damage": 62, "drop_distance": 100, "radius": 108, "arm_time": 0.3, "max_mines": 15, "lifetime": 14}
+      ]
+    },
+    {
+      "id": "solar_lance", "behavior": "lance", "tags": ["projectile", "heavy"],
+      "name": {"pt_BR": "Lança Solar", "en": "Solar Lance"},
+      "desc": {"pt_BR": "Ataque de alto dano direcionado a elites.", "en": "High-damage strike that seeks elites."},
+      "icon": {"shape": "lance", "color": "#ffd36e"},
+      "levels": [
+        {"damage": 70, "cooldown": 4.0, "count": 1, "pierce": 3, "proj_speed": 900, "width": 12},
+        {"damage": 88, "cooldown": 3.7, "count": 1, "pierce": 4, "proj_speed": 950, "width": 13},
+        {"damage": 108, "cooldown": 3.4, "count": 1, "pierce": 5, "proj_speed": 1000, "width": 14},
+        {"damage": 130, "cooldown": 3.1, "count": 2, "pierce": 6, "proj_speed": 1050, "width": 15},
+        {"damage": 160, "cooldown": 2.8, "count": 2, "pierce": 8, "proj_speed": 1100, "width": 17}
+      ]
+    },
+    {
+      "id": "magnetic_swarm", "behavior": "swarm", "tags": ["device", "projectile"],
+      "name": {"pt_BR": "Enxame Magnético", "en": "Magnetic Swarm"},
+      "desc": {"pt_BR": "Pequenos fragmentos buscam alvos marcados.", "en": "Tiny fragments chase marked targets."},
+      "icon": {"shape": "swarm", "color": "#8a5cff"},
+      "levels": [
+        {"damage": 7, "cooldown": 1.6, "count": 4, "marks": 2, "turn_rate": 7.0, "proj_speed": 520},
+        {"damage": 8, "cooldown": 1.5, "count": 5, "marks": 2, "turn_rate": 7.5, "proj_speed": 540},
+        {"damage": 10, "cooldown": 1.4, "count": 6, "marks": 3, "turn_rate": 8.0, "proj_speed": 560},
+        {"damage": 12, "cooldown": 1.3, "count": 7, "marks": 3, "turn_rate": 8.5, "proj_speed": 580},
+        {"damage": 14, "cooldown": 1.2, "count": 9, "marks": 4, "turn_rate": 9.0, "proj_speed": 620}
+      ]
+    },
+    {
+      "id": "suction_vortex", "behavior": "vortex", "tags": ["zone"],
+      "name": {"pt_BR": "Vórtice de Sucção", "en": "Suction Vortex"},
+      "desc": {"pt_BR": "Cria uma área temporária que agrupa inimigos.", "en": "Creates a temporary area that groups enemies."},
+      "icon": {"shape": "vortex", "color": "#b07cff"},
+      "levels": [
+        {"dps": 10, "cooldown": 5.0, "radius": 130, "duration": 2.5, "pull": 170, "range": 300},
+        {"dps": 13, "cooldown": 4.7, "radius": 140, "duration": 2.8, "pull": 185, "range": 310},
+        {"dps": 16, "cooldown": 4.4, "radius": 150, "duration": 3.0, "pull": 200, "range": 320},
+        {"dps": 20, "cooldown": 4.1, "radius": 165, "duration": 3.3, "pull": 215, "range": 330},
+        {"dps": 25, "cooldown": 3.7, "radius": 180, "duration": 3.6, "pull": 235, "range": 340}
+      ]
+    }
+  ],
+  "passives": [
+    {"id": "expander_cell", "name": {"pt_BR": "Célula Expansora", "en": "Expander Cell"}, "desc": {"pt_BR": "Aumenta a área dos efeitos.", "en": "Increases effect area."}, "icon": {"shape": "cell", "color": "#7cf5d0"}, "stat": "area", "op": "pct", "values": [0.1, 0.2, 0.3, 0.4, 0.5]},
+    {"id": "dynamic_cooler", "name": {"pt_BR": "Refrigerador Dinâmico", "en": "Dynamic Cooler"}, "desc": {"pt_BR": "Reduz a recarga das habilidades.", "en": "Reduces ability cooldown."}, "icon": {"shape": "snow", "color": "#9fe3ff"}, "stat": "cooldown", "op": "pct", "values": [-0.07, -0.14, -0.2, -0.26, -0.32]},
+    {"id": "crit_condenser", "name": {"pt_BR": "Condensador Crítico", "en": "Critical Condenser"}, "desc": {"pt_BR": "Aumenta a chance de acerto crítico.", "en": "Increases critical chance."}, "icon": {"shape": "crit", "color": "#ffb547"}, "stat": "crit_chance", "op": "flat", "values": [0.05, 0.1, 0.15, 0.2, 0.26]},
+    {"id": "vector_boots", "name": {"pt_BR": "Botas Vetoriais", "en": "Vector Boots"}, "desc": {"pt_BR": "Aumenta a velocidade de movimento.", "en": "Increases movement speed."}, "icon": {"shape": "boot", "color": "#ff6f61"}, "stat": "move_speed", "op": "pct", "values": [0.07, 0.14, 0.21, 0.28, 0.35]},
+    {"id": "reactive_armor", "name": {"pt_BR": "Blindagem Reativa", "en": "Reactive Plating"}, "desc": {"pt_BR": "Aumenta a armadura.", "en": "Increases armor."}, "icon": {"shape": "shield", "color": "#f2efe6"}, "stat": "armor", "op": "flat", "values": [8, 16, 25, 35, 46]},
+    {"id": "resonant_collector", "name": {"pt_BR": "Coletor Ressonante", "en": "Resonant Collector"}, "desc": {"pt_BR": "Aumenta o raio de coleta.", "en": "Increases pickup radius."}, "icon": {"shape": "magnet", "color": "#3fd0c9"}, "stat": "pickup", "op": "pct", "values": [0.25, 0.5, 0.75, 1.0, 1.3]},
+    {"id": "kinetic_duplicator", "name": {"pt_BR": "Duplicador Cinético", "en": "Kinetic Duplicator"}, "desc": {"pt_BR": "Adiciona projéteis e unidades extras.", "en": "Adds extra projectiles and units."}, "icon": {"shape": "dup", "color": "#c79bff"}, "stat": "projectile_count", "op": "flat", "values": [1, 1, 2, 2, 3]},
+    {"id": "unstable_clock", "name": {"pt_BR": "Relógio Instável", "en": "Unstable Clock"}, "desc": {"pt_BR": "Aumenta a duração dos efeitos.", "en": "Increases effect duration."}, "icon": {"shape": "clock", "color": "#ffd36e"}, "stat": "duration", "op": "pct", "values": [0.1, 0.2, 0.3, 0.4, 0.5]},
+    {"id": "regen_core", "name": {"pt_BR": "Núcleo Regenerativo", "en": "Regenerative Core"}, "desc": {"pt_BR": "Regenera vida ao longo do tempo.", "en": "Regenerates health over time."}, "icon": {"shape": "heart", "color": "#5fd38d"}, "stat": "regen", "op": "flat", "values": [0.4, 0.8, 1.2, 1.7, 2.3]},
+    {"id": "range_lens", "name": {"pt_BR": "Lente de Alcance", "en": "Range Lens"}, "desc": {"pt_BR": "Projéteis mais rápidos e de maior alcance.", "en": "Faster, longer-ranged projectiles."}, "icon": {"shape": "lens", "color": "#9fe3ff"}, "stat": "projectile_speed", "op": "pct", "values": [0.1, 0.2, 0.3, 0.4, 0.5]},
+    {"id": "impact_stabilizer", "name": {"pt_BR": "Estabilizador de Impacto", "en": "Impact Stabilizer"}, "desc": {"pt_BR": "Mais dano e força de recuo.", "en": "More damage and knockback."}, "icon": {"shape": "fist", "color": "#ff9a5a"}, "stat": "damage", "op": "pct", "values": [0.06, 0.12, 0.18, 0.24, 0.3], "extra": {"stat": "knockback", "op": "pct", "values": [0.1, 0.2, 0.3, 0.4, 0.5]}},
+    {"id": "fortune_algorithm", "name": {"pt_BR": "Algoritmo de Fortuna", "en": "Fortune Algorithm"}, "desc": {"pt_BR": "Aumenta sorte e ganho de experiência.", "en": "Increases luck and XP gain."}, "icon": {"shape": "clover", "color": "#5fd38d"}, "stat": "luck", "op": "pct", "values": [0.1, 0.2, 0.3, 0.4, 0.5], "extra": {"stat": "xp_gain", "op": "pct", "values": [0.04, 0.08, 0.12, 0.16, 0.2]}}
+  ],
+  "evolutions": [
+    {"id": "gyro_ring", "from": "disc_helix", "requires": "vector_boots", "behavior": "orbit", "evolved": true,
+     "name": {"pt_BR": "Anel Girocinético", "en": "Gyrokinetic Ring"}, "desc": {"pt_BR": "Discos permanentes que lançam lascas para fora a cada volta.", "en": "Permanent discs that fling shards outward each turn."},
+     "icon": {"shape": "orbit", "color": "#f2efe6"},
+     "params": {"damage": 34, "count": 6, "orbit_radius": 128, "rot_speed": 4.2, "hit_interval": 0.35, "size": 22, "uptime": 0, "downtime": 0, "shard_interval": 1.2, "shard_damage": 14}},
+    {"id": "dendritic_storm", "from": "ion_arc", "requires": "crit_condenser", "behavior": "chain", "evolved": true,
+     "name": {"pt_BR": "Tempestade Dendrítica", "en": "Dendritic Storm"}, "desc": {"pt_BR": "Raios ramificados que deixam inimigos eletrizados e lentos.", "en": "Branching bolts that shock and slow."},
+     "icon": {"shape": "bolt", "color": "#f2efe6"},
+     "params": {"damage": 42, "cooldown": 0.9, "range": 460, "jumps": 8, "jump_range": 210, "bolts": 3, "slow": 0.4, "slow_time": 1.2}},
+    {"id": "probe_reef", "from": "coral_probe", "requires": "kinetic_duplicator", "behavior": "drone", "evolved": true,
+     "name": {"pt_BR": "Recife de Sondas", "en": "Probe Reef"}, "desc": {"pt_BR": "Quatro sondas que disparam mísseis explosivos teleguiados.", "en": "Four probes firing homing explosive missiles."},
+     "icon": {"shape": "drone", "color": "#f2efe6"},
+     "params": {"damage": 26, "count": 4, "fire_interval": 0.42, "range": 560, "proj_speed": 560, "pierce": 0, "explode_radius": 60, "homing": 6.0}},
+    {"id": "meridian", "from": "photon_line", "requires": "range_lens", "behavior": "beam", "evolved": true,
+     "name": {"pt_BR": "Meridiano", "en": "Meridian"}, "desc": {"pt_BR": "Feixes giratórios que varrem a arena ao redor do agente.", "en": "Rotating beams sweeping around the agent."},
+     "icon": {"shape": "beam", "color": "#f2efe6"},
+     "params": {"damage": 30, "cooldown": 4.0, "length": 760, "width": 34, "beams": 3, "sweep": 2.4, "tick": 0.18}},
+    {"id": "tectonic_rift", "from": "seismic_capsule", "requires": "impact_stabilizer", "behavior": "lob", "evolved": true,
+     "name": {"pt_BR": "Falha Tectônica", "en": "Tectonic Rift"}, "desc": {"pt_BR": "Cápsulas abrem fendas em cruz que trituram a horda.", "en": "Capsules open cross-shaped fissures."},
+     "icon": {"shape": "capsule", "color": "#f2efe6"},
+     "params": {"damage": 60, "cooldown": 1.6, "radius": 125, "count": 3, "waves": 3, "range": 520, "fissures": 4, "fissure_length": 260}},
+    {"id": "absolute_zero", "from": "cryo_mist", "requires": "reactive_armor", "behavior": "zone_slow", "evolved": true,
+     "name": {"pt_BR": "Zero Absoluto", "en": "Absolute Zero"}, "desc": {"pt_BR": "A bruma congela inimigos periodicamente.", "en": "The mist periodically freezes enemies."},
+     "icon": {"shape": "mist", "color": "#f2efe6"},
+     "params": {"dps": 26, "radius": 170, "slow": 0.6, "count": 3, "tick": 0.3, "drift": 190, "freeze_interval": 3.0, "freeze_time": 1.1}},
+    {"id": "kaleidoscope", "from": "prism_shard", "requires": "fortune_algorithm", "behavior": "split", "evolved": true,
+     "name": {"pt_BR": "Caleidoscópio", "en": "Kaleidoscope"}, "desc": {"pt_BR": "Estilhaços se dividem novamente e perfuram.", "en": "Shards split again and pierce."},
+     "icon": {"shape": "prism", "color": "#f2efe6"},
+     "params": {"damage": 36, "cooldown": 0.7, "count": 3, "splits": 5, "shard_pct": 0.6, "proj_speed": 760, "depth": 2, "shard_pierce": 1}},
+    {"id": "tide_heart", "from": "reverse_pulse", "requires": "regen_core", "behavior": "nova", "evolved": true,
+     "name": {"pt_BR": "Coração de Maré", "en": "Tide Heart"}, "desc": {"pt_BR": "Pulsos duplos que restauram vida por inimigo atingido.", "en": "Double pulses that heal per enemy hit."},
+     "icon": {"shape": "nova", "color": "#f2efe6"},
+     "params": {"damage": 52, "cooldown": 1.9, "radius": 240, "knockback": 380, "echo": 1, "heal_per_hit": 0.6, "heal_cap": 8}}
+  ],
+  "fallbacks": [
+    {"id": "repair_kit", "name": {"pt_BR": "Kit de Reparos", "en": "Repair Kit"}, "desc": {"pt_BR": "Restaura 30% da vida.", "en": "Restores 30% HP."}, "icon": {"shape": "heart", "color": "#5fd38d"}},
+    {"id": "scrap_cache", "name": {"pt_BR": "Caixa de Sucata", "en": "Scrap Cache"}, "desc": {"pt_BR": "Recebe sucata extra ao fim da missão.", "en": "Extra scrap at mission end."}, "icon": {"shape": "gear", "color": "#ffb547"}}
+  ]
+}

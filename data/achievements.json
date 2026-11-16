@@ -1,0 +1,581 @@
+{
+ "_doc": "Conquistas permanentes baseadas em contadores vitalícios.",
+ "achievements": [
+  {
+   "id": "ach_enemydefeated_1",
+   "event": "EnemyDefeated",
+   "target": 100,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Neutralizador I",
+    "en": "Neutralizer I"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_enemydefeated_2",
+   "event": "EnemyDefeated",
+   "target": 1000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Neutralizador II",
+    "en": "Neutralizer II"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_enemydefeated_3",
+   "event": "EnemyDefeated",
+   "target": 5000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Neutralizador III",
+    "en": "Neutralizer III"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_enemydefeated_4",
+   "event": "EnemyDefeated",
+   "target": 20000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 55,
+    "field_data": 30
+   },
+   "name": {
+    "pt_BR": "Neutralizador IV",
+    "en": "Neutralizer IV"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_enemydefeated_5",
+   "event": "EnemyDefeated",
+   "target": 50000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 70
+   },
+   "name": {
+    "pt_BR": "Neutralizador V",
+    "en": "Neutralizer V"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_enemydefeated_6",
+   "event": "EnemyDefeated",
+   "target": 100000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 85,
+    "field_data": 50
+   },
+   "name": {
+    "pt_BR": "Neutralizador VI",
+    "en": "Neutralizer VI"
+   },
+   "category": "EnemyDefeated"
+  },
+  {
+   "id": "ach_elitedefeated_1",
+   "event": "EliteDefeated",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Caçador de Elites I",
+    "en": "Elite Hunter I"
+   },
+   "category": "EliteDefeated"
+  },
+  {
+   "id": "ach_elitedefeated_2",
+   "event": "EliteDefeated",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Caçador de Elites II",
+    "en": "Elite Hunter II"
+   },
+   "category": "EliteDefeated"
+  },
+  {
+   "id": "ach_elitedefeated_3",
+   "event": "EliteDefeated",
+   "target": 50,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Caçador de Elites III",
+    "en": "Elite Hunter III"
+   },
+   "category": "EliteDefeated"
+  },
+  {
+   "id": "ach_elitedefeated_4",
+   "event": "EliteDefeated",
+   "target": 150,
+   "mode": "sum",
+   "reward": {
+    "prisms": 55,
+    "field_data": 30
+   },
+   "name": {
+    "pt_BR": "Caçador de Elites IV",
+    "en": "Elite Hunter IV"
+   },
+   "category": "EliteDefeated"
+  },
+  {
+   "id": "ach_bossdefeated_1",
+   "event": "BossDefeated",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Quebra-Colossos I",
+    "en": "Colossus Breaker I"
+   },
+   "category": "BossDefeated"
+  },
+  {
+   "id": "ach_bossdefeated_2",
+   "event": "BossDefeated",
+   "target": 5,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Quebra-Colossos II",
+    "en": "Colossus Breaker II"
+   },
+   "category": "BossDefeated"
+  },
+  {
+   "id": "ach_bossdefeated_3",
+   "event": "BossDefeated",
+   "target": 20,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Quebra-Colossos III",
+    "en": "Colossus Breaker III"
+   },
+   "category": "BossDefeated"
+  },
+  {
+   "id": "ach_bossdefeated_4",
+   "event": "BossDefeated",
+   "target": 50,
+   "mode": "sum",
+   "reward": {
+    "prisms": 55,
+    "field_data": 30
+   },
+   "name": {
+    "pt_BR": "Quebra-Colossos IV",
+    "en": "Colossus Breaker IV"
+   },
+   "category": "BossDefeated"
+  },
+  {
+   "id": "ach_damagedealt_1",
+   "event": "DamageDealt",
+   "target": 100000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Tempestade I",
+    "en": "Storm I"
+   },
+   "category": "DamageDealt"
+  },
+  {
+   "id": "ach_damagedealt_2",
+   "event": "DamageDealt",
+   "target": 1000000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Tempestade II",
+    "en": "Storm II"
+   },
+   "category": "DamageDealt"
+  },
+  {
+   "id": "ach_damagedealt_3",
+   "event": "DamageDealt",
+   "target": 10000000,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Tempestade III",
+    "en": "Storm III"
+   },
+   "category": "DamageDealt"
+  },
+  {
+   "id": "ach_missioncompleted_1",
+   "event": "MissionCompleted",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Expedicionário I",
+    "en": "Expeditionary I"
+   },
+   "category": "MissionCompleted"
+  },
+  {
+   "id": "ach_missioncompleted_2",
+   "event": "MissionCompleted",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Expedicionário II",
+    "en": "Expeditionary II"
+   },
+   "category": "MissionCompleted"
+  },
+  {
+   "id": "ach_missioncompleted_3",
+   "event": "MissionCompleted",
+   "target": 30,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Expedicionário III",
+    "en": "Expeditionary III"
+   },
+   "category": "MissionCompleted"
+  },
+  {
+   "id": "ach_missioncompleted_4",
+   "event": "MissionCompleted",
+   "target": 75,
+   "mode": "sum",
+   "reward": {
+    "prisms": 55,
+    "field_data": 30
+   },
+   "name": {
+    "pt_BR": "Expedicionário IV",
+    "en": "Expeditionary IV"
+   },
+   "category": "MissionCompleted"
+  },
+  {
+   "id": "ach_evolutionformed_1",
+   "event": "EvolutionFormed",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Alquimista I",
+    "en": "Alchemist I"
+   },
+   "category": "EvolutionFormed"
+  },
+  {
+   "id": "ach_evolutionformed_2",
+   "event": "EvolutionFormed",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Alquimista II",
+    "en": "Alchemist II"
+   },
+   "category": "EvolutionFormed"
+  },
+  {
+   "id": "ach_evolutionformed_3",
+   "event": "EvolutionFormed",
+   "target": 40,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Alquimista III",
+    "en": "Alchemist III"
+   },
+   "category": "EvolutionFormed"
+  },
+  {
+   "id": "ach_equipmentupgraded_1",
+   "event": "EquipmentUpgraded",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Mecânico I",
+    "en": "Mechanic I"
+   },
+   "category": "EquipmentUpgraded"
+  },
+  {
+   "id": "ach_equipmentupgraded_2",
+   "event": "EquipmentUpgraded",
+   "target": 50,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Mecânico II",
+    "en": "Mechanic II"
+   },
+   "category": "EquipmentUpgraded"
+  },
+  {
+   "id": "ach_equipmentupgraded_3",
+   "event": "EquipmentUpgraded",
+   "target": 200,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Mecânico III",
+    "en": "Mechanic III"
+   },
+   "category": "EquipmentUpgraded"
+  },
+  {
+   "id": "ach_equipmentfused_1",
+   "event": "EquipmentFused",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Fundidor I",
+    "en": "Smelter I"
+   },
+   "category": "EquipmentFused"
+  },
+  {
+   "id": "ach_equipmentfused_2",
+   "event": "EquipmentFused",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Fundidor II",
+    "en": "Smelter II"
+   },
+   "category": "EquipmentFused"
+  },
+  {
+   "id": "ach_equipmentfused_3",
+   "event": "EquipmentFused",
+   "target": 30,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Fundidor III",
+    "en": "Smelter III"
+   },
+   "category": "EquipmentFused"
+  },
+  {
+   "id": "ach_agentunlocked_1",
+   "event": "AgentUnlocked",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Recrutador I",
+    "en": "Recruiter I"
+   },
+   "category": "AgentUnlocked"
+  },
+  {
+   "id": "ach_agentunlocked_2",
+   "event": "AgentUnlocked",
+   "target": 3,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Recrutador II",
+    "en": "Recruiter II"
+   },
+   "category": "AgentUnlocked"
+  },
+  {
+   "id": "ach_agentunlocked_3",
+   "event": "AgentUnlocked",
+   "target": 5,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Recrutador III",
+    "en": "Recruiter III"
+   },
+   "category": "AgentUnlocked"
+  },
+  {
+   "id": "ach_researchpurchased_1",
+   "event": "ResearchPurchased",
+   "target": 1,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Pesquisador I",
+    "en": "Researcher I"
+   },
+   "category": "ResearchPurchased"
+  },
+  {
+   "id": "ach_researchpurchased_2",
+   "event": "ResearchPurchased",
+   "target": 10,
+   "mode": "sum",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Pesquisador II",
+    "en": "Researcher II"
+   },
+   "category": "ResearchPurchased"
+  },
+  {
+   "id": "ach_researchpurchased_3",
+   "event": "ResearchPurchased",
+   "target": 30,
+   "mode": "sum",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Pesquisador III",
+    "en": "Researcher III"
+   },
+   "category": "ResearchPurchased"
+  },
+  {
+   "id": "ach_accountlevel_1",
+   "event": "AccountLevel",
+   "target": 5,
+   "mode": "max",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Veterano I",
+    "en": "Veteran I"
+   },
+   "category": "AccountLevel"
+  },
+  {
+   "id": "ach_accountlevel_2",
+   "event": "AccountLevel",
+   "target": 10,
+   "mode": "max",
+   "reward": {
+    "prisms": 25,
+    "field_data": 10
+   },
+   "name": {
+    "pt_BR": "Veterano II",
+    "en": "Veteran II"
+   },
+   "category": "AccountLevel"
+  },
+  {
+   "id": "ach_accountlevel_3",
+   "event": "AccountLevel",
+   "target": 20,
+   "mode": "max",
+   "reward": {
+    "prisms": 40
+   },
+   "name": {
+    "pt_BR": "Veterano III",
+    "en": "Veteran III"
+   },
+   "category": "AccountLevel"
+  },
+  {
+   "id": "ach_surviveseconds_1",
+   "event": "SurviveSeconds",
+   "target": 3600,
+   "mode": "sum",
+   "reward": {
+    "prisms": 10
+   },
+   "name": {
+    "pt_BR": "Resistente I",
+    "en": "Enduring I"
+   },
+   "category": "SurviveSeconds"
+  }
+ ]
+}

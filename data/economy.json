@@ -1,0 +1,53 @@
+{
+ "_doc": "Tabelas econômicas centralizadas.",
+ "currencies": [
+  "scrap",
+  "prisms",
+  "field_data",
+  "op_seals",
+  "crate_key"
+ ],
+ "starting_wallet": {
+  "scrap": 800,
+  "prisms": 120,
+  "field_data": 20,
+  "op_seals": 3,
+  "crate_key": 1
+ },
+ "account_xp": {
+  "base": 100,
+  "growth": 1.25,
+  "max_level": 60,
+  "level_rewards": {
+   "prisms": 15,
+   "scrap": 200
+  }
+ },
+ "run_rewards": {
+  "scrap_per_kill": 0.35,
+  "scrap_per_elite": 40,
+  "account_xp_per_level": 3,
+  "crate_key_on_boss_chance": 0.25
+ },
+ "offline": {
+  "cap_hours": 8,
+  "scrap_per_minute_per_sector": 1.6,
+  "data_per_hour_per_sector": 1.2,
+  "min_minutes": 5,
+  "max_clock_skew_seconds": 300,
+  "future_tolerance_seconds": 120
+ },
+ "dev": {
+  "grant_amount": {
+   "scrap": 10000,
+   "prisms": 1000,
+   "field_data": 500,
+   "op_seals": 10,
+   "crate_key": 5
+  }
+ },
+ "transaction_log_size": 120,
+ "workshop_history_size": 30,
+ "speed_unlock_account_level": 5,
+ "revive_prism_cost": 30
+}

@@ -1,0 +1,42 @@
+{
+  "_doc": "Constantes de partida. Nenhum número de jogo deve ficar no código.",
+  "run": {
+    "xp_curve": {"base": 6, "linear": 4.5, "power": 1.28, "power_mult": 1.6},
+    "max_actives": 6,
+    "max_passives": 6,
+    "offer_count": 3,
+    "base_rerolls": 1,
+    "base_locks": 0,
+    "invuln_seconds": 0.7,
+    "min_damage_taken": 1,
+    "contact_tick": 0.35,
+    "speed_boost_factor": 1.5,
+    "revive_hp_pct": 0.5,
+    "revive_clear_radius": 420,
+    "fallback_heal_pct": 0.3,
+    "fallback_scrap": 40,
+    "magnet_pull_speed": 900,
+    "chest_pick_count": 1,
+    "drop_chance": {"heal": 0.004, "magnet": 0.002, "pulse_bomb": 0.0015},
+    "elite_drop": "data_cache",
+    "max_xp_pickups": 260,
+    "player_radius": 18,
+    "camera_zoom": 1.15,
+    "spawn_margin": 90,
+    "spawn_min_player_distance": 380,
+    "enemy_separation": 0.55,
+    "lod_near_radius": 900,
+    "lod_far_interval": 3
+  },
+  "limits": {
+    "low": {"projectiles": 220, "fx": 60, "damage_numbers": 0, "enemies": 260, "hostile_projectiles": 90, "decor_density": 0.4},
+    "medium": {"projectiles": 360, "fx": 110, "damage_numbers": 24, "enemies": 380, "hostile_projectiles": 140, "decor_density": 0.75},
+    "high": {"projectiles": 520, "fx": 180, "damage_numbers": 40, "enemies": 520, "hostile_projectiles": 200, "decor_density": 1.0}
+  },
+  "damage_numbers": {"aggregate_window": 0.18, "rise": 46, "life": 0.6},
+  "enemy_scaling": {"hp_per_minute": 0.32, "damage_per_minute": 0.10, "speed_per_minute": 0.012, "champion_hp": 4.0, "champion_size": 1.35, "champion_chance_per_minute": 0.012},
+  "difficulty": {
+    "normal": {"hp": 1.0, "damage": 1.0, "budget": 1.0, "reward": 1.0},
+    "hard": {"hp": 1.6, "damage": 1.35, "budget": 1.25, "reward": 1.6}
+  }
+}

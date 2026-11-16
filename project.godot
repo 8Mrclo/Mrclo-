@@ -1,0 +1,67 @@
+; Engine configuration file.
+; Núcleo Zero — Godot 4.3+
+
+config_version=5
+
+[application]
+
+config/name="Núcleo Zero"
+config/description="Sobrevivência contra hordas em uma megacidade costeira após O Pulso."
+config/version="0.1.0"
+run/main_scene="res://scenes/boot/boot.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.043, 0.165, 0.2, 1)
+boot_splash/show_image=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://src/core/combat_event_bus.gd"
+Rng="*res://src/core/random_service.gd"
+Loc="*res://src/localization/localization_manager.gd"
+Content="*res://src/core/content_database.gd"
+Game="*res://src/core/game_state.gd"
+Saves="*res://src/save/save_manager.gd"
+Settings="*res://src/core/settings_manager.gd"
+Economy="*res://src/economy/economy_manager.gd"
+Inventory="*res://src/equipment/inventory_manager.gd"
+Agents="*res://src/progression/agent_manager.gd"
+Research="*res://src/progression/research_manager.gd"
+Missions="*res://src/missions/mission_manager.gd"
+Objectives="*res://src/progression/objective_manager.gd"
+Achievements="*res://src/progression/achievement_manager.gd"
+Rewards="*res://src/economy/reward_manager.gd"
+Store="*res://src/economy/store_service.gd"
+Tutorial="*res://src/progression/tutorial_manager.gd"
+Analytics="*res://src/analytics_local/analytics_local.gd"
+Audio="*res://src/audio/audio_manager.gd"
+Router="*res://src/core/scene_router.gd"
+DebugTools="*res://src/debug/debug_tools.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=450
+window/size/window_height_override=800
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+window/vsync/vsync_mode=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=false
+environment/defaults/default_clear_color=Color(0.043, 0.165, 0.2, 1)
+anti_aliasing/quality/msaa_2d=1

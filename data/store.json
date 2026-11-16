@@ -1,0 +1,485 @@
+{
+ "_doc": "Catálogo da loja simulada (sem dinheiro real). period: none|daily|weekly. Ofertas diárias: rotação determinística por seed+data. Cápsulas exibem probabilidades e possuem garantia.",
+ "tabs": [
+  "featured",
+  "equipment",
+  "shards",
+  "supplies",
+  "packs",
+  "exchange"
+ ],
+ "daily_rotation": {
+  "slots": 4,
+  "pool": [
+   {
+    "kind": "item",
+    "rarity": "adjusted",
+    "cost": {
+     "scrap": 900
+    },
+    "limit": 1
+   },
+   {
+    "kind": "item",
+    "rarity": "adjusted",
+    "cost": {
+     "prisms": 40
+    },
+    "limit": 1
+   },
+   {
+    "kind": "item",
+    "rarity": "advanced",
+    "cost": {
+     "prisms": 120
+    },
+    "limit": 1
+   },
+   {
+    "kind": "shards",
+    "amount": 5,
+    "cost": {
+     "scrap": 1200
+    },
+    "limit": 2
+   },
+   {
+    "kind": "shards",
+    "amount": 8,
+    "cost": {
+     "prisms": 60
+    },
+    "limit": 1
+   },
+   {
+    "kind": "currency",
+    "gives": {
+     "field_data": 30
+    },
+    "cost": {
+     "scrap": 1500
+    },
+    "limit": 2
+   },
+   {
+    "kind": "item",
+    "rarity": "common",
+    "cost": {
+     "scrap": 250
+    },
+    "limit": 3
+   }
+  ]
+ },
+ "offers": [
+  {
+   "id": "free_daily_scrap",
+   "tab": "supplies",
+   "name": {
+    "pt_BR": "Ração de Sucata",
+    "en": "Scrap Ration"
+   },
+   "desc": {
+    "pt_BR": "Suprimento diário gratuito.",
+    "en": "Free daily supply."
+   },
+   "cost": {},
+   "gives": {
+    "scrap": 250
+   },
+   "period": "daily",
+   "limit": 1,
+   "icon": {
+    "shape": "gear",
+    "color": "#ffb547"
+   }
+  },
+  {
+   "id": "free_daily_data",
+   "tab": "supplies",
+   "name": {
+    "pt_BR": "Pacote de Dados",
+    "en": "Data Packet"
+   },
+   "desc": {
+    "pt_BR": "Dados de campo gratuitos, uma vez ao dia.",
+    "en": "Free field data daily."
+   },
+   "cost": {},
+   "gives": {
+    "field_data": 10
+   },
+   "period": "daily",
+   "limit": 1,
+   "icon": {
+    "shape": "chip",
+    "color": "#3fa7ff"
+   }
+  },
+  {
+   "id": "free_weekly_seal",
+   "tab": "supplies",
+   "name": {
+    "pt_BR": "Selo Semanal",
+    "en": "Weekly Seal"
+   },
+   "desc": {
+    "pt_BR": "Um selo de operação por semana.",
+    "en": "One operation seal per week."
+   },
+   "cost": {},
+   "gives": {
+    "op_seals": 2
+   },
+   "period": "weekly",
+   "limit": 1,
+   "icon": {
+    "shape": "seal",
+    "color": "#c79bff"
+   }
+  },
+  {
+   "id": "feat_starter_pack",
+   "tab": "featured",
+   "name": {
+    "pt_BR": "Kit de Recruta",
+    "en": "Recruit Kit"
+   },
+   "desc": {
+    "pt_BR": "Pacote de progressão simulado: sucata, dados e um equipamento ajustado.",
+    "en": "Simulated progression pack."
+   },
+   "cost": {
+    "prisms": 120
+   },
+   "gives": {
+    "scrap": 3000,
+    "field_data": 60,
+    "item": {
+     "rarity": "adjusted"
+    }
+   },
+   "period": "none",
+   "limit": 1,
+   "icon": {
+    "shape": "box",
+    "color": "#ff6f61"
+   }
+  },
+  {
+   "id": "feat_capsule",
+   "tab": "featured",
+   "kind": "crate",
+   "crate": "supply_capsule",
+   "name": {
+    "pt_BR": "Cápsula de Suprimentos",
+    "en": "Supply Capsule"
+   },
+   "desc": {
+    "pt_BR": "Contém 1 equipamento. Probabilidades exibidas. Garantia de Singular+ a cada 10 aberturas.",
+    "en": "Contains 1 equipment. Odds shown."
+   },
+   "cost": {
+    "prisms": 60
+   },
+   "alt_cost": {
+    "crate_key": 1
+   },
+   "period": "none",
+   "limit": 0,
+   "icon": {
+    "shape": "capsule",
+    "color": "#8a5cff"
+   }
+  },
+  {
+   "id": "eq_basic_crate",
+   "tab": "equipment",
+   "kind": "crate",
+   "crate": "scrap_capsule",
+   "name": {
+    "pt_BR": "Cápsula de Sucata",
+    "en": "Scrap Capsule"
+   },
+   "desc": {
+    "pt_BR": "Equipamento comum ou ajustado.",
+    "en": "Common or tuned equipment."
+   },
+   "cost": {
+    "scrap": 600
+   },
+   "period": "daily",
+   "limit": 5,
+   "icon": {
+    "shape": "capsule",
+    "color": "#b9c4c9"
+   }
+  },
+  {
+   "id": "eq_supply_crate",
+   "tab": "equipment",
+   "kind": "crate",
+   "crate": "supply_capsule",
+   "name": {
+    "pt_BR": "Cápsula de Suprimentos",
+    "en": "Supply Capsule"
+   },
+   "desc": {
+    "pt_BR": "Contém 1 equipamento com chance de raridade alta.",
+    "en": "1 equipment with high-rarity chance."
+   },
+   "cost": {
+    "prisms": 60
+   },
+   "alt_cost": {
+    "crate_key": 1
+   },
+   "period": "none",
+   "limit": 0,
+   "icon": {
+    "shape": "capsule",
+    "color": "#8a5cff"
+   }
+  },
+  {
+   "id": "pack_sector",
+   "tab": "packs",
+   "name": {
+    "pt_BR": "Pacote de Setor",
+    "en": "Sector Pack"
+   },
+   "desc": {
+    "pt_BR": "Recompensa simulada por progressão: 2 chaves de cápsula.",
+    "en": "Simulated progression pack: 2 capsule keys."
+   },
+   "cost": {
+    "prisms": 100
+   },
+   "gives": {
+    "crate_key": 2
+   },
+   "period": "weekly",
+   "limit": 1,
+   "requires": {
+    "account_level": 3
+   },
+   "icon": {
+    "shape": "key",
+    "color": "#ffd36e"
+   }
+  },
+  {
+   "id": "pack_researcher",
+   "tab": "packs",
+   "name": {
+    "pt_BR": "Pacote do Pesquisador",
+    "en": "Researcher Pack"
+   },
+   "desc": {
+    "pt_BR": "150 dados de campo.",
+    "en": "150 field data."
+   },
+   "cost": {
+    "prisms": 150
+   },
+   "gives": {
+    "field_data": 150
+   },
+   "period": "weekly",
+   "limit": 1,
+   "icon": {
+    "shape": "chip",
+    "color": "#3fa7ff"
+   }
+  },
+  {
+   "id": "pack_veteran",
+   "tab": "packs",
+   "name": {
+    "pt_BR": "Pacote Veterano",
+    "en": "Veteran Pack"
+   },
+   "desc": {
+    "pt_BR": "Equipamento avançado e 20 fragmentos aleatórios.",
+    "en": "Advanced item and 20 random shards."
+   },
+   "cost": {
+    "prisms": 300
+   },
+   "gives": {
+    "item": {
+     "rarity": "advanced"
+    },
+    "random_shards": 20
+   },
+   "period": "none",
+   "limit": 1,
+   "requires": {
+    "account_level": 6
+   },
+   "icon": {
+    "shape": "box",
+    "color": "#3fa7ff"
+   }
+  },
+  {
+   "id": "ex_scrap_to_data",
+   "tab": "exchange",
+   "name": {
+    "pt_BR": "Sucata → Dados",
+    "en": "Scrap → Data"
+   },
+   "desc": {
+    "pt_BR": "Converte 1000 de sucata em 20 dados de campo.",
+    "en": "Convert 1000 scrap into 20 data."
+   },
+   "cost": {
+    "scrap": 1000
+   },
+   "gives": {
+    "field_data": 20
+   },
+   "period": "daily",
+   "limit": 5,
+   "icon": {
+    "shape": "swap",
+    "color": "#3fa7ff"
+   }
+  },
+  {
+   "id": "ex_prisms_to_scrap",
+   "tab": "exchange",
+   "name": {
+    "pt_BR": "Prismas → Sucata",
+    "en": "Prisms → Scrap"
+   },
+   "desc": {
+    "pt_BR": "Converte 20 prismas em 1500 de sucata.",
+    "en": "Convert 20 prisms into 1500 scrap."
+   },
+   "cost": {
+    "prisms": 20
+   },
+   "gives": {
+    "scrap": 1500
+   },
+   "period": "daily",
+   "limit": 5,
+   "icon": {
+    "shape": "swap",
+    "color": "#ffb547"
+   }
+  },
+  {
+   "id": "ex_prisms_to_seal",
+   "tab": "exchange",
+   "name": {
+    "pt_BR": "Prismas → Selo",
+    "en": "Prisms → Seal"
+   },
+   "desc": {
+    "pt_BR": "Converte 30 prismas em 1 selo de operação.",
+    "en": "Convert 30 prisms into 1 seal."
+   },
+   "cost": {
+    "prisms": 30
+   },
+   "gives": {
+    "op_seals": 1
+   },
+   "period": "daily",
+   "limit": 3,
+   "icon": {
+    "shape": "seal",
+    "color": "#c79bff"
+   }
+  },
+  {
+   "id": "sh_random_shards",
+   "tab": "shards",
+   "name": {
+    "pt_BR": "Lote de Fragmentos",
+    "en": "Shard Lot"
+   },
+   "desc": {
+    "pt_BR": "10 fragmentos de um agente aleatório.",
+    "en": "10 shards of a random agent."
+   },
+   "cost": {
+    "prisms": 50
+   },
+   "gives": {
+    "random_shards": 10
+   },
+   "period": "daily",
+   "limit": 3,
+   "icon": {
+    "shape": "shard",
+    "color": "#ff6f61"
+   }
+  }
+ ],
+ "shard_offers_per_agent": {
+  "amount": 5,
+  "cost": {
+   "scrap": 1500
+  },
+  "period": "daily",
+  "limit": 2
+ },
+ "crates": {
+  "supply_capsule": {
+   "name": {
+    "pt_BR": "Cápsula de Suprimentos",
+    "en": "Supply Capsule"
+   },
+   "odds": [
+    [
+     "common",
+     0.4
+    ],
+    [
+     "adjusted",
+     0.33
+    ],
+    [
+     "advanced",
+     0.18
+    ],
+    [
+     "singular",
+     0.075
+    ],
+    [
+     "relic",
+     0.015
+    ]
+   ],
+   "pity_threshold": 10,
+   "pity_min_rarity": "singular"
+  },
+  "scrap_capsule": {
+   "name": {
+    "pt_BR": "Cápsula de Sucata",
+    "en": "Scrap Capsule"
+   },
+   "odds": [
+    [
+     "common",
+     0.75
+    ],
+    [
+     "adjusted",
+     0.25
+    ]
+   ],
+   "pity_threshold": 0,
+   "pity_min_rarity": "adjusted"
+  }
+ },
+ "crate_progression": {
+  "desc": {
+   "pt_BR": "Alternativa por progressão: chaves de cápsula são ganhas em missões, conquistas e no Pacote de Setor."
+  }
+ }
+}
