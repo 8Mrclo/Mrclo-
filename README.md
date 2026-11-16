@@ -43,7 +43,7 @@ Na primeira abertura via linha de comando rode `godot --headless --path . --impo
 GODOT=/caminho/para/godot ./run_tests.sh
 ```
 
-Executa: compilação de todos os scripts, **77 testes** unitários/integração (fórmulas, crítico, redução de dano, evoluções, ofertas aleatórias, garantia da cápsula, transações, saldo insuficiente, fusão, reciclagem, save/load, migração, recuperação de corrupção, missão concluída, recompensa única, recompensa offline, agentes, dependências da pesquisa, todos os chefes, todos os mapas, modo Defesa) e uma fumaça de navegação por todas as telas.
+Executa: compilação de todos os scripts, **78 testes** unitários/integração (fórmulas, crítico, redução de dano, evoluções, ofertas aleatórias, garantia da cápsula, transações, saldo insuficiente, fusão, reciclagem, save/load, migração, recuperação de corrupção, missão concluída, recompensa única, recompensa offline, agentes, dependências da pesquisa, todos os chefes, todos os mapas, modo Defesa) e uma fumaça de navegação por todas as telas.
 
 Simulação de uma missão inteira (bot automático):
 

@@ -27,6 +27,8 @@ func build() -> void:
 	all.disabled = Objectives.claimable_count(_tab) == 0
 	row.add_child(all)
 	header_box.add_child(row)
+	if _tab == "daily":
+		header_box.add_child(_milestones())
 	var list := scroll_body()
 	var defs := Objectives.defs(_tab)
 	if defs.is_empty():
@@ -67,4 +69,32 @@ func _row(d: Dictionary) -> Control:
 		b.disabled = not done
 		row2.add_child(b)
 	v.add_child(row2)
+	return p
+
+
+func _milestones() -> Control:
+	var p := UIKit.panel(null, Color(Palette.PETROL_DEEP, 0.8), Palette.AMBER)
+	var v := UIKit.vbox(6)
+	p.add_child(v)
+	var track := Objectives.milestone_track()
+	var done := Objectives.daily_claimed_count()
+	var top := 1
+	for m in track:
+		top = maxi(top, int(m.at))
+	v.add_child(UIKit.label(Loc.t("objectives.milestones", {"n": done, "max": top}), 20, Palette.AMBER))
+	v.add_child(UIKit.progress(done, top, Palette.AMBER, 14))
+	var row := UIKit.hbox(8)
+	for i in track.size():
+		var m: Dictionary = track[i]
+		var box := UIKit.vbox(2)
+		box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		box.add_child(UIKit.label(Loc.t("objectives.milestone_at", {"n": m.at}), 17, Palette.text_muted()))
+		box.add_child(UIKit.amounts_row(m.reward, 17))
+		var idx := i
+		var claimed := Rewards.is_claimed(Objectives.milestone_key(i))
+		var b := UIKit.button(Loc.t("common.claimed") if claimed else Loc.t("common.claim"), func(): show_reward_toast(Objectives.claim_milestone(idx)), "primary" if Objectives.can_claim_milestone(i) else "ghost", 52)
+		b.disabled = not Objectives.can_claim_milestone(i)
+		box.add_child(b)
+		row.add_child(box)
+	v.add_child(row)
 	return p

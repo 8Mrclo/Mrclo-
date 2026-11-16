@@ -130,3 +130,15 @@ func test_account_level_up() -> void:
 	var gained := Game.add_account_xp(100000)
 	check(gained > 0, "sobe de nível")
 	check(Game.data.profile.account_xp >= 0, "xp nunca negativa")
+
+
+func test_daily_milestones_once() -> void:
+	Objectives.refresh_periods()
+	check(not Objectives.can_claim_milestone(0), "sem resgates, sem marco")
+	for d in Objectives.defs("daily").slice(0, 3):
+		var e := Objectives.entry("daily", d.id)
+		e.progress = float(d.target)
+		Objectives.claim("daily", d.id)
+	check(Objectives.can_claim_milestone(0), "3 resgates liberam o marco")
+	check(not Objectives.claim_milestone(0).is_empty(), "marco resgatado")
+	check(not Objectives.can_claim_milestone(0), "marco não repete")

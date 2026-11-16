@@ -25,7 +25,7 @@ static func show(uid: int, on_change: Callable) -> void:
 	for e in def.get("rarity_effects", []):
 		var unlocked := Content.rarity_index(it.rarity) >= Content.rarity_index(e.rarity)
 		if not unlocked:
-			v.add_child(UIKit.label("🔒 %s: %s" % [Loc.text(Content.rarity(e.rarity).name), Loc.text(e.desc)], 18, Palette.text_muted(), true))
+			v.add_child(UIKit.label("%s · %s: %s" % [Loc.t("common.locked"), Loc.text(Content.rarity(e.rarity).name), Loc.text(e.desc)], 18, Palette.text_muted(), true))
 	var eq := Inventory.get_item(Inventory.equipped_uid(def.slot))
 	if not eq.is_empty() and int(eq.uid) != uid:
 		var diff := ItemRules.power(it) - ItemRules.power(eq)

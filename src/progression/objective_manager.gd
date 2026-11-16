@@ -112,4 +112,42 @@ func claimable_count(cat: String = "") -> int:
 		for d in defs(c):
 			if can_claim(c, d):
 				n += 1
+		if c == "daily":
+			for i in milestone_track().size():
+				if can_claim_milestone(i):
+					n += 1
 	return n
+
+
+# ---------------------------------------------------------------- milestones
+
+## Daily milestone track: rewards at N claimed daily objectives (per day).
+func milestone_track() -> Array:
+	var ms: Array = Content.objectives.get("milestones", [])
+	return ms[0].get("points", []) if not ms.is_empty() else []
+
+
+func daily_claimed_count() -> int:
+	var n := 0
+	for d in defs("daily"):
+		if bool(entry("daily", d.id).claimed):
+			n += 1
+	return n
+
+
+func milestone_key(i: int) -> String:
+	return "obj:milestone:%s:%d" % [Game.data.objectives.daily.period, i]
+
+
+func can_claim_milestone(i: int) -> bool:
+	var track := milestone_track()
+	return i < track.size() and daily_claimed_count() >= int(track[i].at) and not Rewards.is_claimed(milestone_key(i))
+
+
+func claim_milestone(i: int) -> Dictionary:
+	if not can_claim_milestone(i):
+		return {}
+	var s := Rewards.grant(milestone_track()[i].reward, "milestone", milestone_key(i))
+	Saves.save_now()
+	EventBus.notifications_changed.emit()
+	return s

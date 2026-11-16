@@ -45,7 +45,7 @@ func _tile(id: String) -> Control:
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l.clip_text = true
 	v.add_child(l)
-	var sub := UIKit.label(Loc.t("common.lv", {"n": Agents.level(id)}) if unlocked else "🔒", 16, Palette.AMBER)
+	var sub := UIKit.label(Loc.t("common.lv", {"n": Agents.level(id)}) if unlocked else Loc.t("common.locked"), 16, Palette.AMBER)
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(sub)
 	b.add_child(v)

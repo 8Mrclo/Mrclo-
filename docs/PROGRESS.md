@@ -4,7 +4,7 @@
 
 | Critério | Estado | Como foi verificado |
 |---|---|---|
-| Projeto abre sem erros | ✅ | `tools/check_scripts.tscn` (126 scripts), boot headless |
+| Projeto abre sem erros | ✅ | `tools/check_scripts.tscn` (126 scripts, 78 testes), boot headless |
 | Chega ao lobby | ✅ | fumaça de UI, capturas |
 | Seleciona agente e equipamento | ✅ | telas Agentes/Arsenal; testes de inventário |
 | Inicia missão | ✅ | fumaça (Loading → Battle) |
@@ -38,3 +38,10 @@
 - Exportação Android configurada, não executada (sem SDK no ambiente); FPS em aparelho real não medido.
 - Inglês completo na interface; nomes/descrições de conteúdo em inglês parciais (fallback pt_BR).
 - Sem gamepad para navegação de menus além do foco padrão do Godot.
+
+## Registro de verificação (última execução)
+
+- `run_tests.sh`: 126 scripts compilados, 78 testes, 0 falhas; fumaça de UI ok.
+- Simulação de 10 min (bot, invencível, Avenida Submersa): vitória aos ~9:40, 2 evoluções, chefe derrotado.
+- Simulação mortal (bot simples, perfil novo): derrota entre 3 e 4 minutos — esperado para a 1ª tentativa sem melhorias permanentes; ajustar após testes com jogadores.
+- Capturas renderizadas com `tools/screenshots.tscn` sob Xvfb (lobby, missões, agentes, arsenal, oficina/pesquisa, loja, operações, configurações, batalha, nível, chefe, resultado).

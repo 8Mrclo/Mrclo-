@@ -19,7 +19,7 @@ func build() -> void:
 	info.add_child(UIKit.label(Loc.text(mode_def.desc), 21, Palette.text_muted(), true))
 	var st := Missions.mode_unlock_status(_mode)
 	if not st.ok:
-		info.add_child(UIKit.label("🔒 " + Loc.t(st.key, st.params), 21, Palette.CORAL, true))
+		info.add_child(UIKit.label(Loc.t("common.locked") + " · " + Loc.t(st.key, st.params), 21, Palette.CORAL, true))
 	if not mode_def.get("cost", {}).is_empty():
 		var row := UIKit.hbox(6)
 		row.add_child(UIKit.label(Loc.t("mission.entry_cost"), 20, Palette.text_muted()))
@@ -77,7 +77,7 @@ func _map_card(id: String) -> Control:
 			fc.add_child(UIKit.amounts_row(m.rewards.first_clear, 18))
 			v.add_child(fc)
 	if not unlocked:
-		v.add_child(UIKit.label("🔒 " + Loc.t("mission.locked_hint"), 20, Palette.CORAL, true))
+		v.add_child(UIKit.label(Loc.t("common.locked") + " · " + Loc.t("mission.locked_hint"), 20, Palette.CORAL, true))
 		p.modulate = Color(1, 1, 1, 0.6)
 		return p
 	var row := UIKit.hbox(10)
