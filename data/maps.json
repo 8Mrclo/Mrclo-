@@ -1,0 +1,166 @@
+{
+  "_doc": "Mapas (ambientes) e modos. waves: orçamento de ameaça por segundo e tabela ponderada; min_alive: [tempo, mínimo]. events: ring/swarm/elite/boss. Obstáculos são gerados deterministicamente a partir de layout.seed.",
+  "maps": [
+    {
+      "id": "submerged_avenue", "sector": 1, "featured": true,
+      "name": {"pt_BR": "Avenida Submersa", "en": "Submerged Avenue"},
+      "desc": {"pt_BR": "Antiga via expressa alagada pela maré. Postes tombados e poças de água condutiva.", "en": "Flooded expressway with fallen lamp posts."},
+      "palette": {"ground": "#0d3440", "ground_alt": "#10404d", "detail": "#1b5a66", "glow": "#7cf5d0", "obstacle": "#24505c", "obstacle_top": "#3a7a85"},
+      "size": [3400, 3400],
+      "duration": 600, "boss": "abyssal_digger", "boss_time": 540,
+      "layout": {"seed": 1101, "count": 34, "style": "ruins", "min_size": 50, "max_size": 150, "clear_radius": 320, "decor": 160},
+      "hazards": [{"type": "slow_zone", "count": 8, "radius": 115, "factor": 0.62, "color": "#3fa7ff"}],
+      "variant": 0,
+      "waves": [
+        {"from": 0, "to": 60, "budget": 1.5, "pool": [["scrap_sniffer", 10], ["glass_wasp", 2]]},
+        {"from": 60, "to": 150, "budget": 2.6, "pool": [["scrap_sniffer", 8], ["glass_wasp", 4], ["rust_hull", 2]]},
+        {"from": 150, "to": 240, "budget": 3.8, "pool": [["scrap_sniffer", 6], ["glass_wasp", 4], ["rust_hull", 3], ["orphan_turret", 2]]},
+        {"from": 240, "to": 330, "budget": 5.0, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["orphan_turret", 2], ["neon_slime", 3], ["echo_hunter", 2]]},
+        {"from": 330, "to": 420, "budget": 6.4, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["rust_hull", 3], ["neon_slime", 3], ["magnetic_shepherd", 1], ["echo_hunter", 2]]},
+        {"from": 420, "to": 540, "budget": 8.0, "pool": [["scrap_sniffer", 4], ["glass_wasp", 4], ["rust_hull", 4], ["orphan_turret", 2], ["neon_slime", 3], ["magnetic_shepherd", 2], ["echo_hunter", 3], ["moulder", 1]]},
+        {"from": 540, "to": 99999, "budget": 4.5, "pool": [["scrap_sniffer", 6], ["rust_hull", 2], ["glass_wasp", 3]]}
+      ],
+      "min_alive": [[0, 8], [120, 24], [300, 44], [480, 66]],
+      "events": [
+        {"t": 75, "type": "ring", "enemy": "scrap_sniffer", "count": 22},
+        {"t": 180, "type": "elite", "enemy": "elite_rust_titan"},
+        {"t": 270, "type": "swarm", "enemy": "glass_wasp", "count": 30},
+        {"t": 360, "type": "elite", "enemy": "elite_hunter_alpha"},
+        {"t": 450, "type": "ring", "enemy": "rust_hull", "count": 16},
+        {"t": 500, "type": "elite", "enemy": "elite_shepherd_prime"}
+      ],
+      "scaling": {"hp": 1.0, "damage": 1.0},
+      "rewards": {"clear": {"scrap": 600, "field_data": 30, "account_xp": 120}, "fail_ratio": 0.45, "per_minute": {"scrap": 35, "account_xp": 8}, "first_clear": {"prisms": 80, "shard_breno": 10, "item": {"def": "wpn_tide_staff", "rarity": "adjusted"}}, "stars": [{"prisms": 20}, {"field_data": 20}, {"prisms": 40, "shard_nara": 6}]},
+      "objectives": [
+        {"type": "kills", "target": 900},
+        {"type": "elite_kills", "target": 3},
+        {"type": "finish_hp_pct", "target": 0.5}
+      ]
+    },
+    {
+      "id": "antenna_garden", "sector": 2,
+      "name": {"pt_BR": "Jardim de Antenas", "en": "Antenna Garden"},
+      "desc": {"pt_BR": "Telhados conectados por antenas que florescem com eletricidade.", "en": "Rooftops linked by antennas blooming with electricity."},
+      "palette": {"ground": "#1d2a3f", "ground_alt": "#22304a", "detail": "#3a3f6b", "glow": "#c79bff", "obstacle": "#38345e", "obstacle_top": "#5c4f9a"},
+      "size": [3000, 3000],
+      "duration": 420, "boss": "silica_queen", "boss_time": 360,
+      "layout": {"seed": 2207, "count": 28, "style": "antennas", "min_size": 40, "max_size": 110, "clear_radius": 300, "decor": 140},
+      "hazards": [{"type": "pulse_zone", "count": 6, "radius": 125, "period": 7.0, "telegraph": 1.2, "damage": 14, "color": "#c79bff"}],
+      "variant": 1,
+      "waves": [
+        {"from": 0, "to": 70, "budget": 2.0, "pool": [["glass_wasp", 8], ["scrap_sniffer", 4]]},
+        {"from": 70, "to": 180, "budget": 3.6, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 1], ["orphan_turret", 3], ["scrap_sniffer", 4]]},
+        {"from": 180, "to": 300, "budget": 5.6, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 2], ["orphan_turret", 3], ["moulder", 2], ["echo_hunter", 2]]},
+        {"from": 300, "to": 99999, "budget": 6.0, "pool": [["glass_wasp", 6], ["orphan_turret", 3], ["rust_hull", 2], ["moulder", 2]]}
+      ],
+      "min_alive": [[0, 10], [120, 30], [260, 52]],
+      "events": [
+        {"t": 60, "type": "swarm", "enemy": "glass_wasp", "count": 26},
+        {"t": 150, "type": "elite", "enemy": "elite_wasp_matriarch"},
+        {"t": 270, "type": "elite", "enemy": "elite_shepherd_prime"}
+      ],
+      "scaling": {"hp": 1.4, "damage": 1.2},
+      "rewards": {"clear": {"scrap": 700, "field_data": 40, "account_xp": 150}, "fail_ratio": 0.45, "per_minute": {"scrap": 45, "account_xp": 10}, "first_clear": {"prisms": 100, "shard_yumi": 12}, "stars": [{"prisms": 25}, {"field_data": 25}, {"prisms": 50}]},
+      "objectives": [{"type": "kills", "target": 700}, {"type": "reach_level", "target": 18}, {"type": "evolutions", "target": 1}]
+    },
+    {
+      "id": "solar_terminal", "sector": 3,
+      "name": {"pt_BR": "Terminal Solar", "en": "Solar Terminal"},
+      "desc": {"pt_BR": "Rodoviária de painéis solares rachados. Erupções de luz cruzam o pátio.", "en": "Bus terminal of cracked solar panels."},
+      "palette": {"ground": "#3a2a1f", "ground_alt": "#45311f", "detail": "#6b4a2a", "glow": "#ffd36e", "obstacle": "#5a3f28", "obstacle_top": "#8a6038"},
+      "size": [3000, 3000],
+      "duration": 420, "boss": "lighthouse_archon", "boss_time": 360,
+      "layout": {"seed": 3313, "count": 26, "style": "panels", "min_size": 60, "max_size": 160, "clear_radius": 300, "decor": 120},
+      "hazards": [{"type": "flare", "interval": 11.0, "telegraph": 1.3, "width": 70, "damage": 18, "color": "#ffd36e"}],
+      "variant": 2,
+      "waves": [
+        {"from": 0, "to": 70, "budget": 2.2, "pool": [["scrap_sniffer", 6], ["echo_hunter", 3]]},
+        {"from": 70, "to": 180, "budget": 4.0, "pool": [["scrap_sniffer", 5], ["echo_hunter", 3], ["orphan_turret", 3], ["rust_hull", 2]]},
+        {"from": 180, "to": 300, "budget": 6.0, "pool": [["echo_hunter", 4], ["orphan_turret", 3], ["rust_hull", 3], ["neon_slime", 2], ["magnetic_shepherd", 1]]},
+        {"from": 300, "to": 99999, "budget": 6.2, "pool": [["echo_hunter", 3], ["scrap_sniffer", 6], ["rust_hull", 2]]}
+      ],
+      "min_alive": [[0, 10], [120, 32], [260, 54]],
+      "events": [
+        {"t": 90, "type": "ring", "enemy": "echo_hunter", "count": 14},
+        {"t": 160, "type": "elite", "enemy": "elite_hunter_alpha"},
+        {"t": 280, "type": "elite", "enemy": "elite_rust_titan"}
+      ],
+      "scaling": {"hp": 1.9, "damage": 1.45},
+      "rewards": {"clear": {"scrap": 800, "field_data": 50, "account_xp": 180}, "fail_ratio": 0.45, "per_minute": {"scrap": 55, "account_xp": 12}, "first_clear": {"prisms": 120, "shard_caio": 12}, "stars": [{"prisms": 30}, {"field_data": 30}, {"prisms": 60}]},
+      "objectives": [{"type": "kills", "target": 800}, {"type": "elite_kills", "target": 2}, {"type": "max_damage_taken", "target": 400}]
+    },
+    {
+      "id": "industrial_mangrove", "sector": 4,
+      "name": {"pt_BR": "Mangue Industrial", "en": "Industrial Mangrove"},
+      "desc": {"pt_BR": "Raízes luminosas engolem uma refinaria abandonada.", "en": "Glowing roots swallow an abandoned refinery."},
+      "palette": {"ground": "#16301f", "ground_alt": "#1b3a26", "detail": "#2f5a35", "glow": "#b2f56a", "obstacle": "#2d4a2a", "obstacle_top": "#4f7a3a"},
+      "size": [3200, 3200],
+      "duration": 420, "boss": "mangrove_colossus", "boss_time": 360,
+      "layout": {"seed": 4421, "count": 36, "style": "roots", "min_size": 40, "max_size": 130, "clear_radius": 300, "decor": 170},
+      "hazards": [{"type": "dot_zone", "count": 8, "radius": 100, "dps": 6, "color": "#b2f56a"}],
+      "variant": 1,
+      "waves": [
+        {"from": 0, "to": 70, "budget": 2.4, "pool": [["neon_slime", 5], ["scrap_sniffer", 5]]},
+        {"from": 70, "to": 180, "budget": 4.4, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["scrap_sniffer", 4]]},
+        {"from": 180, "to": 300, "budget": 6.6, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["magnetic_shepherd", 2], ["glass_wasp", 3]]},
+        {"from": 300, "to": 99999, "budget": 6.4, "pool": [["neon_slime", 5], ["scrap_sniffer", 5], ["rust_hull", 2]]}
+      ],
+      "min_alive": [[0, 12], [120, 34], [260, 56]],
+      "events": [
+        {"t": 80, "type": "swarm", "enemy": "neon_slime", "count": 18},
+        {"t": 170, "type": "elite", "enemy": "elite_rust_titan"},
+        {"t": 290, "type": "elite", "enemy": "elite_wasp_matriarch"}
+      ],
+      "scaling": {"hp": 2.5, "damage": 1.7},
+      "rewards": {"clear": {"scrap": 950, "field_data": 60, "account_xp": 210}, "fail_ratio": 0.45, "per_minute": {"scrap": 65, "account_xp": 14}, "first_clear": {"prisms": 140, "shard_orfeu": 15}, "stars": [{"prisms": 35}, {"field_data": 35}, {"prisms": 70}]},
+      "objectives": [{"type": "kills", "target": 900}, {"type": "reach_level", "target": 20}, {"type": "finish_hp_pct", "target": 0.4}]
+    },
+    {
+      "id": "broken_observatory", "sector": 5,
+      "name": {"pt_BR": "Observatório Partido", "en": "Broken Observatory"},
+      "desc": {"pt_BR": "Cúpula rachada no alto do morro onde o Pulso começou. Detritos caem do céu.", "en": "Cracked dome where the Pulse began."},
+      "palette": {"ground": "#221a33", "ground_alt": "#2a2040", "detail": "#3f2f5f", "glow": "#ff6f61", "obstacle": "#3a2c55", "obstacle_top": "#62488f"},
+      "size": [3000, 3000],
+      "duration": 480, "boss": "lighthouse_archon", "boss_time": 420,
+      "layout": {"seed": 5531, "count": 30, "style": "dome", "min_size": 50, "max_size": 140, "clear_radius": 300, "decor": 140},
+      "hazards": [{"type": "debris", "interval": 4.5, "telegraph": 1.1, "radius": 75, "damage": 20, "color": "#ff6f61"}],
+      "variant": 2,
+      "waves": [
+        {"from": 0, "to": 80, "budget": 2.8, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["echo_hunter", 2]]},
+        {"from": 80, "to": 200, "budget": 5.0, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["neon_slime", 3], ["glass_wasp", 3]]},
+        {"from": 200, "to": 340, "budget": 7.4, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["magnetic_shepherd", 2], ["moulder", 2], ["neon_slime", 3]]},
+        {"from": 340, "to": 99999, "budget": 7.0, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["glass_wasp", 4]]}
+      ],
+      "min_alive": [[0, 14], [120, 36], [280, 60]],
+      "events": [
+        {"t": 120, "type": "elite", "enemy": "elite_shepherd_prime"},
+        {"t": 210, "type": "boss_mid", "enemy": "silica_queen", "hp_mult": 0.5},
+        {"t": 330, "type": "elite", "enemy": "elite_hunter_alpha"}
+      ],
+      "scaling": {"hp": 3.2, "damage": 2.0},
+      "rewards": {"clear": {"scrap": 1200, "field_data": 80, "account_xp": 260}, "fail_ratio": 0.45, "per_minute": {"scrap": 80, "account_xp": 16}, "first_clear": {"prisms": 200, "item": {"def": "dev_pulse_core", "rarity": "singular"}}, "stars": [{"prisms": 40}, {"field_data": 40}, {"prisms": 90}]},
+      "objectives": [{"type": "kills", "target": 1100}, {"type": "elite_kills", "target": 2}, {"type": "evolutions", "target": 2}]
+    }
+  ],
+  "modes": [
+    {"id": "expedition", "name": {"pt_BR": "Expedição", "en": "Expedition"}, "desc": {"pt_BR": "Campanha principal: sobreviva e derrote o chefe do setor.", "en": "Main campaign."}, "cost": {}, "unlock": {"type": "default"}, "rules": {}},
+    {"id": "rupture", "name": {"pt_BR": "Ruptura", "en": "Rupture"}, "desc": {"pt_BR": "Sobreviva 8 minutos a uma horda crescente, sem chefe.", "en": "Survive 8 minutes, no boss."}, "cost": {"op_seals": 1}, "unlock": {"type": "mission", "value": "submerged_avenue"},
+     "rules": {"duration": 480, "no_boss": true, "budget_mult": 1.35, "hp_mult": 1.15, "reward_mult": 1.3, "victory_on_timer": true}},
+    {"id": "hunt", "name": {"pt_BR": "Caçada", "en": "Hunt"}, "desc": {"pt_BR": "Elites a cada 40s e chefe no quarto minuto.", "en": "Elites every 40s and an early boss."}, "cost": {"op_seals": 1}, "unlock": {"type": "mission", "value": "submerged_avenue"},
+     "rules": {"duration": 300, "boss_time": 240, "elite_interval": 40, "budget_mult": 0.8, "reward_mult": 1.2, "bonus": {"field_data": 40}}},
+    {"id": "defense", "name": {"pt_BR": "Defesa", "en": "Defense"}, "desc": {"pt_BR": "Proteja o Repetidor da Farol Nove por 5 minutos.", "en": "Protect the Farol Nove Relay for 5 minutes."}, "cost": {"op_seals": 1}, "unlock": {"type": "mission", "value": "antenna_garden"},
+     "rules": {"duration": 300, "no_boss": true, "device_hp": 700, "device_target_chance": 0.45, "budget_mult": 1.1, "reward_mult": 1.25, "victory_on_timer": true}},
+    {"id": "daily_sim", "name": {"pt_BR": "Simulação Diária", "en": "Daily Simulation"}, "desc": {"pt_BR": "Modificadores rotativos gerados localmente a cada dia.", "en": "Rotating locally generated modifiers."}, "cost": {}, "unlock": {"type": "account_level", "value": 3},
+     "rules": {"duration": 300, "boss_time": 270, "daily_reward_once": true, "modifier_count": 2, "reward_mult": 1.5}}
+  ],
+  "daily_modifiers": [
+    {"id": "swift_horde", "name": {"pt_BR": "Horda Veloz", "en": "Swift Horde"}, "desc": {"pt_BR": "Inimigos 20% mais rápidos.", "en": "Enemies 20% faster."}, "enemy_speed": 1.2},
+    {"id": "rich_veins", "name": {"pt_BR": "Veios Ricos", "en": "Rich Veins"}, "desc": {"pt_BR": "+50% de experiência.", "en": "+50% XP."}, "player_mods": [{"stat": "xp_gain", "op": "pct", "value": 0.5}]},
+    {"id": "glass_cannon", "name": {"pt_BR": "Canhão de Vidro", "en": "Glass Cannon"}, "desc": {"pt_BR": "+50% de dano, -30% de vida.", "en": "+50% damage, -30% HP."}, "player_mods": [{"stat": "damage", "op": "mult", "value": 0.5}, {"stat": "max_hp", "op": "mult", "value": -0.3}]},
+    {"id": "fragile_swarm", "name": {"pt_BR": "Enxame Frágil", "en": "Fragile Swarm"}, "desc": {"pt_BR": "Inimigos com -30% de vida, +40% de quantidade.", "en": "Enemies -30% HP, +40% count."}, "enemy_hp": 0.7, "budget": 1.4},
+    {"id": "elite_parade", "name": {"pt_BR": "Desfile de Elites", "en": "Elite Parade"}, "desc": {"pt_BR": "Uma elite a cada minuto.", "en": "An elite every minute."}, "elite_interval": 60},
+    {"id": "overclock", "name": {"pt_BR": "Sobrecarga", "en": "Overclock"}, "desc": {"pt_BR": "-25% de recarga, inimigos causam +25% de dano.", "en": "-25% cooldown, enemies +25% damage."}, "player_mods": [{"stat": "cooldown", "op": "pct", "value": -0.25}], "enemy_damage": 1.25},
+    {"id": "wide_lens", "name": {"pt_BR": "Lente Larga", "en": "Wide Lens"}, "desc": {"pt_BR": "+30% de área e coleta.", "en": "+30% area and pickup."}, "player_mods": [{"stat": "area", "op": "pct", "value": 0.3}, {"stat": "pickup", "op": "pct", "value": 0.3}]},
+    {"id": "heavy_tide", "name": {"pt_BR": "Maré Pesada", "en": "Heavy Tide"}, "desc": {"pt_BR": "Inimigos +40% de vida, recompensa +30%.", "en": "Enemies +40% HP, rewards +30%."}, "enemy_hp": 1.4, "reward": 1.3}
+  ]
+}

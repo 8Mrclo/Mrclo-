@@ -1,0 +1,743 @@
+{
+ "_doc": "Árvore de pesquisa: custo por rank cresce com cost_growth. 'requires' lista nós que precisam de pelo menos 1 rank.",
+ "cost_growth": 1.6,
+ "branches": [
+  {
+   "id": "survival",
+   "name": {
+    "pt_BR": "Sobrevivência",
+    "en": "Survival"
+   },
+   "color": "#5fd38d"
+  },
+  {
+   "id": "power",
+   "name": {
+    "pt_BR": "Potência",
+    "en": "Power"
+   },
+   "color": "#ff6f61"
+  },
+  {
+   "id": "exploration",
+   "name": {
+    "pt_BR": "Exploração",
+    "en": "Exploration"
+   },
+   "color": "#3fa7ff"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "sv_hull_1",
+   "branch": "survival",
+   "tier": 1,
+   "col": 1,
+   "name": {
+    "pt_BR": "Casco Reforçado I",
+    "en": "Reinforced Hull I"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 10,
+    "scrap": 100
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "max_hp",
+    "op": "flat",
+    "value": 10
+   },
+   "requires": []
+  },
+  {
+   "id": "sv_plating",
+   "branch": "survival",
+   "tier": 2,
+   "col": 0,
+   "name": {
+    "pt_BR": "Placas de Doca",
+    "en": "Dock Plating"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 20,
+    "scrap": 200
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "armor",
+    "op": "flat",
+    "value": 4
+   },
+   "requires": [
+    "sv_hull_1"
+   ]
+  },
+  {
+   "id": "sv_regen",
+   "branch": "survival",
+   "tier": 2,
+   "col": 2,
+   "name": {
+    "pt_BR": "Seiva Regenerativa",
+    "en": "Regenerative Sap"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 20,
+    "scrap": 200
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "regen",
+    "op": "flat",
+    "value": 0.2
+   },
+   "requires": [
+    "sv_hull_1"
+   ]
+  },
+  {
+   "id": "sv_hull_2",
+   "branch": "survival",
+   "tier": 3,
+   "col": 1,
+   "name": {
+    "pt_BR": "Casco Reforçado II",
+    "en": "Reinforced Hull II"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 35,
+    "scrap": 400
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "max_hp",
+    "op": "pct",
+    "value": 0.05
+   },
+   "requires": [
+    "sv_plating",
+    "sv_regen"
+   ]
+  },
+  {
+   "id": "sv_dodge",
+   "branch": "survival",
+   "tier": 3,
+   "col": 0,
+   "name": {
+    "pt_BR": "Reflexo de Maré",
+    "en": "Tide Reflex"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 35,
+    "scrap": 400
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "dodge",
+    "op": "flat",
+    "value": 0.02
+   },
+   "requires": [
+    "sv_plating"
+   ]
+  },
+  {
+   "id": "sv_dr",
+   "branch": "survival",
+   "tier": 4,
+   "col": 0,
+   "name": {
+    "pt_BR": "Amortecedor",
+    "en": "Shock Absorber"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 60,
+    "scrap": 700
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "damage_reduction",
+    "op": "flat",
+    "value": 0.03
+   },
+   "requires": [
+    "sv_dodge"
+   ]
+  },
+  {
+   "id": "sv_iframes",
+   "branch": "survival",
+   "tier": 3,
+   "col": 2,
+   "name": {
+    "pt_BR": "Pele de Faraday",
+    "en": "Faraday Skin"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 40,
+    "scrap": 450
+   },
+   "effect": {
+    "type": "meta",
+    "key": "invuln_bonus",
+    "value": 0.1
+   },
+   "requires": [
+    "sv_regen"
+   ]
+  },
+  {
+   "id": "sv_revive",
+   "branch": "survival",
+   "tier": 4,
+   "col": 1,
+   "name": {
+    "pt_BR": "Protocolo Lázaro",
+    "en": "Lazarus Protocol"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 90,
+    "scrap": 1200
+   },
+   "effect": {
+    "type": "meta",
+    "key": "revive",
+    "value": 1
+   },
+   "requires": [
+    "sv_hull_2"
+   ]
+  },
+  {
+   "id": "sv_heal_drop",
+   "branch": "survival",
+   "tier": 4,
+   "col": 2,
+   "name": {
+    "pt_BR": "Kits de Campo",
+    "en": "Field Kits"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 50,
+    "scrap": 600
+   },
+   "effect": {
+    "type": "meta",
+    "key": "heal_drop_mult",
+    "value": 0.5
+   },
+   "requires": [
+    "sv_iframes"
+   ]
+  },
+  {
+   "id": "sv_last_stand",
+   "branch": "survival",
+   "tier": 5,
+   "col": 1,
+   "name": {
+    "pt_BR": "Último Farol",
+    "en": "Last Beacon"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 140,
+    "scrap": 2000
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "max_hp",
+    "op": "pct",
+    "value": 0.1
+   },
+   "requires": [
+    "sv_revive",
+    "sv_dr"
+   ]
+  },
+  {
+   "id": "pw_edge_1",
+   "branch": "power",
+   "tier": 1,
+   "col": 1,
+   "name": {
+    "pt_BR": "Calibragem I",
+    "en": "Calibration I"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 10,
+    "scrap": 100
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "damage",
+    "op": "pct",
+    "value": 0.03
+   },
+   "requires": []
+  },
+  {
+   "id": "pw_crit",
+   "branch": "power",
+   "tier": 2,
+   "col": 0,
+   "name": {
+    "pt_BR": "Lente Fina",
+    "en": "Fine Lens"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 20,
+    "scrap": 200
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "crit_chance",
+    "op": "flat",
+    "value": 0.02
+   },
+   "requires": [
+    "pw_edge_1"
+   ]
+  },
+  {
+   "id": "pw_speed",
+   "branch": "power",
+   "tier": 2,
+   "col": 2,
+   "name": {
+    "pt_BR": "Gatilho Leve",
+    "en": "Light Trigger"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 20,
+    "scrap": 200
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "attack_speed",
+    "op": "pct",
+    "value": 0.03
+   },
+   "requires": [
+    "pw_edge_1"
+   ]
+  },
+  {
+   "id": "pw_edge_2",
+   "branch": "power",
+   "tier": 3,
+   "col": 1,
+   "name": {
+    "pt_BR": "Calibragem II",
+    "en": "Calibration II"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 35,
+    "scrap": 400
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "damage",
+    "op": "pct",
+    "value": 0.05
+   },
+   "requires": [
+    "pw_crit",
+    "pw_speed"
+   ]
+  },
+  {
+   "id": "pw_critdmg",
+   "branch": "power",
+   "tier": 3,
+   "col": 0,
+   "name": {
+    "pt_BR": "Foco Estelar",
+    "en": "Stellar Focus"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 40,
+    "scrap": 450
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "crit_mult",
+    "op": "flat",
+    "value": 0.1
+   },
+   "requires": [
+    "pw_crit"
+   ]
+  },
+  {
+   "id": "pw_area",
+   "branch": "power",
+   "tier": 3,
+   "col": 2,
+   "name": {
+    "pt_BR": "Dispersor",
+    "en": "Disperser"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 40,
+    "scrap": 450
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "area",
+    "op": "pct",
+    "value": 0.04
+   },
+   "requires": [
+    "pw_speed"
+   ]
+  },
+  {
+   "id": "pw_cooldown",
+   "branch": "power",
+   "tier": 4,
+   "col": 1,
+   "name": {
+    "pt_BR": "Dissipador",
+    "en": "Heat Sink"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 60,
+    "scrap": 700
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "cooldown",
+    "op": "pct",
+    "value": -0.03
+   },
+   "requires": [
+    "pw_edge_2"
+   ]
+  },
+  {
+   "id": "pw_pierce",
+   "branch": "power",
+   "tier": 4,
+   "col": 0,
+   "name": {
+    "pt_BR": "Ponta de Sílica",
+    "en": "Silica Tip"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 80,
+    "scrap": 900
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "pierce",
+    "op": "flat",
+    "value": 1
+   },
+   "requires": [
+    "pw_critdmg"
+   ]
+  },
+  {
+   "id": "pw_projectile",
+   "branch": "power",
+   "tier": 4,
+   "col": 2,
+   "name": {
+    "pt_BR": "Câmara Dupla",
+    "en": "Twin Chamber"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 120,
+    "scrap": 1500
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "projectile_count",
+    "op": "flat",
+    "value": 1
+   },
+   "requires": [
+    "pw_area"
+   ]
+  },
+  {
+   "id": "pw_overdrive",
+   "branch": "power",
+   "tier": 5,
+   "col": 1,
+   "name": {
+    "pt_BR": "Sobremarcha",
+    "en": "Overdrive"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 140,
+    "scrap": 2000
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "damage",
+    "op": "mult",
+    "value": 0.08
+   },
+   "requires": [
+    "pw_cooldown",
+    "pw_pierce"
+   ]
+  },
+  {
+   "id": "ex_xp_1",
+   "branch": "exploration",
+   "tier": 1,
+   "col": 1,
+   "name": {
+    "pt_BR": "Sensor de Ecos I",
+    "en": "Echo Sensor I"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 10,
+    "scrap": 100
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "xp_gain",
+    "op": "pct",
+    "value": 0.03
+   },
+   "requires": []
+  },
+  {
+   "id": "ex_pickup",
+   "branch": "exploration",
+   "tier": 2,
+   "col": 0,
+   "name": {
+    "pt_BR": "Ímã de Bolso",
+    "en": "Pocket Magnet"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 20,
+    "scrap": 200
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "pickup",
+    "op": "pct",
+    "value": 0.08
+   },
+   "requires": [
+    "ex_xp_1"
+   ]
+  },
+  {
+   "id": "ex_reroll",
+   "branch": "exploration",
+   "tier": 2,
+   "col": 2,
+   "name": {
+    "pt_BR": "Reprogramação",
+    "en": "Reprogram"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 30,
+    "scrap": 300
+   },
+   "effect": {
+    "type": "meta",
+    "key": "reroll",
+    "value": 1
+   },
+   "requires": [
+    "ex_xp_1"
+   ]
+  },
+  {
+   "id": "ex_luck",
+   "branch": "exploration",
+   "tier": 3,
+   "col": 0,
+   "name": {
+    "pt_BR": "Intuição de Campo",
+    "en": "Field Intuition"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 35,
+    "scrap": 400
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "luck",
+    "op": "pct",
+    "value": 0.05
+   },
+   "requires": [
+    "ex_pickup"
+   ]
+  },
+  {
+   "id": "ex_lock",
+   "branch": "exploration",
+   "tier": 3,
+   "col": 2,
+   "name": {
+    "pt_BR": "Trava de Opção",
+    "en": "Option Lock"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 45,
+    "scrap": 500
+   },
+   "effect": {
+    "type": "meta",
+    "key": "lock",
+    "value": 1
+   },
+   "requires": [
+    "ex_reroll"
+   ]
+  },
+  {
+   "id": "ex_scrap",
+   "branch": "exploration",
+   "tier": 3,
+   "col": 1,
+   "name": {
+    "pt_BR": "Peneira de Sucata",
+    "en": "Scrap Sieve"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 35,
+    "scrap": 350
+   },
+   "effect": {
+    "type": "meta",
+    "key": "scrap_bonus",
+    "value": 0.08
+   },
+   "requires": [
+    "ex_pickup",
+    "ex_reroll"
+   ]
+  },
+  {
+   "id": "ex_offline",
+   "branch": "exploration",
+   "tier": 4,
+   "col": 0,
+   "name": {
+    "pt_BR": "Turno Noturno",
+    "en": "Night Shift"
+   },
+   "max_rank": 2,
+   "cost": {
+    "field_data": 50,
+    "scrap": 600
+   },
+   "effect": {
+    "type": "meta",
+    "key": "offline_cap_hours",
+    "value": 2
+   },
+   "requires": [
+    "ex_luck"
+   ]
+  },
+  {
+   "id": "ex_speed",
+   "branch": "exploration",
+   "tier": 4,
+   "col": 2,
+   "name": {
+    "pt_BR": "Acelerador Tático",
+    "en": "Tactical Accelerator"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 40,
+    "scrap": 500
+   },
+   "effect": {
+    "type": "meta",
+    "key": "speed_unlock",
+    "value": 1
+   },
+   "requires": [
+    "ex_lock"
+   ]
+  },
+  {
+   "id": "ex_offline_rate",
+   "branch": "exploration",
+   "tier": 4,
+   "col": 1,
+   "name": {
+    "pt_BR": "Rede de Coleta",
+    "en": "Collection Grid"
+   },
+   "max_rank": 3,
+   "cost": {
+    "field_data": 60,
+    "scrap": 700
+   },
+   "effect": {
+    "type": "meta",
+    "key": "offline_rate",
+    "value": 0.15
+   },
+   "requires": [
+    "ex_scrap"
+   ]
+  },
+  {
+   "id": "ex_xp_2",
+   "branch": "exploration",
+   "tier": 5,
+   "col": 1,
+   "name": {
+    "pt_BR": "Sensor de Ecos II",
+    "en": "Echo Sensor II"
+   },
+   "max_rank": 1,
+   "cost": {
+    "field_data": 120,
+    "scrap": 1600
+   },
+   "effect": {
+    "type": "stat",
+    "stat": "xp_gain",
+    "op": "pct",
+    "value": 0.08
+   },
+   "requires": [
+    "ex_offline_rate",
+    "ex_offline"
+   ]
+  }
+ ]
+}

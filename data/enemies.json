@@ -1,0 +1,137 @@
+{
+  "_doc": "Inimigos comuns, elites e chefes. Atributos base em t=0, escalados por balance.enemy_scaling e pela dificuldade. behavior -> máquina de estados em src/enemies/enemy_system.gd. threat = custo no orçamento do SpawnDirector.",
+  "enemies": [
+    {"id": "scrap_sniffer", "family": "scrap_sniffers", "behavior": "chaser",
+     "name": {"pt_BR": "Farejador de Sucata", "en": "Scrap Sniffer"}, "desc": {"pt_BR": "Cão mecânico montado com peças de bicicleta. Rápido e frágil.", "en": "Mechanical hound. Fast and fragile."},
+     "hp": 9, "speed": 128, "damage": 6, "radius": 14, "xp": 1, "threat": 1.0, "resist": 0.0, "mass": 0.8,
+     "visual": {"shape": "triangle", "color": "#d9a066", "accent": "#3a2410", "variants": ["#d9a066", "#c7c08a", "#e08a74"]}},
+    {"id": "rust_hull", "family": "rust_hulls", "behavior": "chaser",
+     "name": {"pt_BR": "Casco Ferrugem", "en": "Rust Hull"}, "desc": {"pt_BR": "Carcaça de barco que rasteja por instinto residual. Lenta e resistente.", "en": "Boat hull crawling on residual instinct."},
+     "hp": 42, "speed": 58, "damage": 13, "radius": 24, "xp": 3, "threat": 4.0, "resist": 0.15, "mass": 2.5,
+     "visual": {"shape": "hexagon", "color": "#b5562f", "accent": "#ffb547", "variants": ["#b5562f", "#8f6a4a", "#a14a3c"]}},
+    {"id": "glass_wasp", "family": "glass_wasps", "behavior": "flyer",
+     "name": {"pt_BR": "Vespa de Vidro", "en": "Glass Wasp"}, "desc": {"pt_BR": "Inseto cristalizado pelo Pulso. Voa em zigue-zague.", "en": "Crystallized insect that weaves through the air."},
+     "hp": 7, "speed": 150, "damage": 5, "radius": 12, "xp": 1, "threat": 1.2, "resist": 0.0, "mass": 0.5, "flying": true,
+     "params": {"weave_amp": 0.9, "weave_freq": 5.0},
+     "visual": {"shape": "diamond", "color": "#9fe3ff", "accent": "#f2efe6", "variants": ["#9fe3ff", "#c79bff", "#7cf5d0"]}},
+    {"id": "orphan_turret", "family": "orphan_turrets", "behavior": "ranged",
+     "name": {"pt_BR": "Torre Órfã", "en": "Orphan Turret"}, "desc": {"pt_BR": "Sentinela de segurança sem dono. Para e dispara à distância.", "en": "Ownerless security sentinel that fires from range."},
+     "hp": 24, "speed": 70, "damage": 9, "radius": 18, "xp": 2, "threat": 3.0, "resist": 0.05, "mass": 1.6,
+     "params": {"range": 330, "telegraph": 0.65, "cooldown": 2.6, "proj_speed": 250, "proj_damage": 9},
+     "visual": {"shape": "square", "color": "#5a8ca8", "accent": "#ff6f61", "variants": ["#5a8ca8", "#6a7a8a", "#4f9a8a"]}},
+    {"id": "neon_slime", "family": "neon_slimes", "behavior": "splitter",
+     "name": {"pt_BR": "Lodo de Neon", "en": "Neon Slime"}, "desc": {"pt_BR": "Massa luminosa que se divide ao ser destruída.", "en": "Glowing mass that splits when destroyed."},
+     "hp": 20, "speed": 80, "damage": 8, "radius": 19, "xp": 2, "threat": 2.4, "resist": 0.0, "mass": 1.2,
+     "params": {"split_into": "neon_slimelet", "split_count": 2},
+     "visual": {"shape": "blob", "color": "#7cf5d0", "accent": "#0b2a33", "variants": ["#7cf5d0", "#ff8fd0", "#b2f56a"]}},
+    {"id": "neon_slimelet", "family": "neon_slimes", "behavior": "chaser", "spawn_only": true,
+     "name": {"pt_BR": "Gota de Neon", "en": "Neon Droplet"}, "desc": {"pt_BR": "Fragmento de um Lodo de Neon.", "en": "Fragment of a Neon Slime."},
+     "hp": 6, "speed": 112, "damage": 4, "radius": 11, "xp": 1, "threat": 0.5, "resist": 0.0, "mass": 0.5,
+     "visual": {"shape": "blob", "color": "#a9ffe6", "accent": "#0b2a33", "variants": ["#a9ffe6", "#ffc0e6", "#d6ff9e"]}},
+    {"id": "magnetic_shepherd", "family": "magnetic_shepherds", "behavior": "buffer",
+     "name": {"pt_BR": "Pastor Magnético", "en": "Magnetic Shepherd"}, "desc": {"pt_BR": "Antena ambulante que fortalece máquinas próximas.", "en": "Walking antenna that empowers nearby machines."},
+     "hp": 32, "speed": 66, "damage": 7, "radius": 20, "xp": 3, "threat": 3.5, "resist": 0.1, "mass": 1.4,
+     "params": {"aura_radius": 170, "speed_bonus": 0.3, "resist_bonus": 0.2, "keep_distance": 260},
+     "visual": {"shape": "star", "color": "#8a5cff", "accent": "#ffb547", "variants": ["#8a5cff", "#5c7cff", "#b05cff"]}},
+    {"id": "echo_hunter", "family": "echo_hunters", "behavior": "charger",
+     "name": {"pt_BR": "Caçador de Eco", "en": "Echo Hunter"}, "desc": {"pt_BR": "Rastreia ecos sonoros e avança em linha reta.", "en": "Tracks echoes and lunges in a straight line."},
+     "hp": 26, "speed": 92, "damage": 14, "radius": 17, "xp": 2, "threat": 2.8, "resist": 0.05, "mass": 1.2,
+     "params": {"trigger_range": 300, "telegraph": 0.75, "dash_speed": 560, "dash_time": 0.5, "recover": 0.9},
+     "visual": {"shape": "arrow", "color": "#ff6f61", "accent": "#f2efe6", "variants": ["#ff6f61", "#ff9a5a", "#e05a8a"]}},
+    {"id": "moulder", "family": "moulders", "behavior": "shaper",
+     "name": {"pt_BR": "Moldador", "en": "Moulder"}, "desc": {"pt_BR": "Constrói barreiras de cristal temporárias.", "en": "Builds temporary crystal barriers."},
+     "hp": 30, "speed": 62, "damage": 8, "radius": 20, "xp": 3, "threat": 3.2, "resist": 0.1, "mass": 1.5,
+     "params": {"cooldown": 6.5, "telegraph": 0.85, "wall_life": 5.0, "wall_radius": 34, "wall_count": 3},
+     "visual": {"shape": "cross", "color": "#c79bff", "accent": "#7cf5d0", "variants": ["#c79bff", "#9fe3ff", "#ffb6f0"]}}
+  ],
+  "elites": [
+    {"id": "elite_rust_titan", "base": "rust_hull", "behavior": "chaser", "elite_skill": "slam",
+     "name": {"pt_BR": "Titã de Ferrugem", "en": "Rust Titan"}, "desc": {"pt_BR": "Um casco de cargueiro inteiro. Golpeia o chão em área.", "en": "An entire freighter hull. Slams the ground."},
+     "hp": 900, "speed": 64, "damage": 20, "radius": 44, "xp": 40, "threat": 30, "resist": 0.2, "mass": 8,
+     "params": {"skill_cooldown": 5.0, "telegraph": 1.0, "slam_radius": 170, "slam_damage": 24},
+     "visual": {"shape": "hexagon", "color": "#d9733f", "accent": "#ffd36e", "variants": ["#d9733f"]}},
+    {"id": "elite_wasp_matriarch", "base": "glass_wasp", "behavior": "flyer", "elite_skill": "brood",
+     "name": {"pt_BR": "Matriarca de Vidro", "en": "Glass Matriarch"}, "desc": {"pt_BR": "Gera enxames de vespas a partir do próprio corpo.", "en": "Births wasp swarms from its own body."},
+     "hp": 650, "speed": 110, "damage": 12, "radius": 34, "xp": 40, "threat": 30, "resist": 0.1, "mass": 4, "flying": true,
+     "params": {"skill_cooldown": 6.0, "telegraph": 0.6, "brood_count": 6, "brood_id": "glass_wasp", "weave_amp": 0.5, "weave_freq": 2.0},
+     "visual": {"shape": "diamond", "color": "#c7f0ff", "accent": "#8a5cff", "variants": ["#c7f0ff"]}},
+    {"id": "elite_shepherd_prime", "base": "magnetic_shepherd", "behavior": "buffer", "elite_skill": "ring_volley",
+     "name": {"pt_BR": "Pastor Primaz", "en": "Prime Shepherd"}, "desc": {"pt_BR": "Dispara anéis magnéticos com uma abertura segura.", "en": "Fires magnetic rings with a safe gap."},
+     "hp": 780, "speed": 70, "damage": 12, "radius": 36, "xp": 40, "threat": 30, "resist": 0.2, "mass": 5,
+     "params": {"skill_cooldown": 4.5, "telegraph": 0.8, "ring_count": 18, "gap_degrees": 60, "proj_speed": 200, "proj_damage": 11, "aura_radius": 240, "speed_bonus": 0.35, "resist_bonus": 0.25, "keep_distance": 220},
+     "visual": {"shape": "star", "color": "#a77cff", "accent": "#ffd36e", "variants": ["#a77cff"]}},
+    {"id": "elite_hunter_alpha", "base": "echo_hunter", "behavior": "charger", "elite_skill": "triple_dash",
+     "name": {"pt_BR": "Caçador Alfa", "en": "Alpha Hunter"}, "desc": {"pt_BR": "Encadeia três investidas sinalizadas.", "en": "Chains three telegraphed lunges."},
+     "hp": 720, "speed": 100, "damage": 22, "radius": 32, "xp": 40, "threat": 30, "resist": 0.15, "mass": 5,
+     "params": {"trigger_range": 420, "telegraph": 0.8, "dash_speed": 640, "dash_time": 0.45, "recover": 1.2, "chain": 3},
+     "visual": {"shape": "arrow", "color": "#ff4f61", "accent": "#ffd36e", "variants": ["#ff4f61"]}}
+  ],
+  "bosses": [
+    {"id": "abyssal_digger", "behavior": "boss",
+     "name": {"pt_BR": "Escavadora Abissal", "en": "Abyssal Digger"}, "desc": {"pt_BR": "Máquina de obras submersas que perfura o asfalto e provoca tremores.", "en": "Underwater excavator that drills through asphalt."},
+     "hp": 9000, "speed": 75, "damage": 22, "radius": 58, "xp": 150, "resist": 0.2, "mass": 30,
+     "phases": [
+       {"threshold": 1.0, "rest": 1.3, "sequence": ["charge", "quake", "charge"], "random": ["charge", "quake"]},
+       {"threshold": 0.66, "rest": 1.0, "sequence": ["burrow", "charge", "quake"], "random": ["burrow", "quake", "charge"], "speed_mult": 1.15},
+       {"threshold": 0.33, "rest": 0.8, "sequence": ["burrow", "quake", "burrow"], "random": ["burrow", "quake", "charge", "summon"], "speed_mult": 1.3}
+     ],
+     "attacks": {
+       "charge": {"telegraph": 0.9, "speed": 700, "time": 0.6, "damage": 26},
+       "quake": {"telegraph": 1.1, "count": 5, "radius": 95, "damage": 22, "spread": 280},
+       "burrow": {"telegraph": 1.2, "radius": 140, "damage": 30, "hide": 0.8},
+       "summon": {"telegraph": 0.6, "enemy": "scrap_sniffer", "count": 10}
+     },
+     "rewards": {"scrap": 300, "field_data": 25},
+     "visual": {"shape": "digger", "color": "#c9822e", "accent": "#0b2a33", "variants": ["#c9822e"]}},
+    {"id": "silica_queen", "behavior": "boss",
+     "name": {"pt_BR": "Rainha de Sílica", "en": "Silica Queen"}, "desc": {"pt_BR": "Colmeia de vidro consciente. Seus espelhos multiplicam disparos.", "en": "Sentient glass hive whose mirrors multiply shots."},
+     "hp": 11000, "speed": 60, "damage": 18, "radius": 54, "xp": 160, "resist": 0.2, "mass": 30,
+     "phases": [
+       {"threshold": 1.0, "rest": 1.2, "sequence": ["fan", "ring", "fan"], "random": ["fan", "ring"]},
+       {"threshold": 0.66, "rest": 1.0, "sequence": ["mirrors", "fan", "ring"], "random": ["fan", "ring", "mirrors"]},
+       {"threshold": 0.33, "rest": 0.8, "sequence": ["mirrors", "ring", "summon"], "random": ["fan", "ring", "mirrors", "summon"], "speed_mult": 1.2}
+     ],
+     "attacks": {
+       "fan": {"telegraph": 0.7, "count": 7, "spread_degrees": 70, "proj_speed": 260, "damage": 14, "volleys": 3},
+       "ring": {"telegraph": 0.8, "count": 22, "gap_degrees": 55, "proj_speed": 210, "damage": 14},
+       "mirrors": {"telegraph": 0.8, "count": 3, "life": 7.0, "radius": 28, "max_copies": 2},
+       "summon": {"telegraph": 0.6, "enemy": "glass_wasp", "count": 12}
+     },
+     "rewards": {"scrap": 360, "field_data": 30},
+     "visual": {"shape": "queen", "color": "#bfe9ff", "accent": "#8a5cff", "variants": ["#bfe9ff"]}},
+    {"id": "lighthouse_archon", "behavior": "boss",
+     "name": {"pt_BR": "Arconte do Farol", "en": "Lighthouse Archon"}, "desc": {"pt_BR": "Antigo farol que absorveu o Pulso. Alterna feixes de luz e sombra perigosa.", "en": "Old lighthouse that absorbed the Pulse."},
+     "hp": 13000, "speed": 55, "damage": 20, "radius": 56, "xp": 180, "resist": 0.25, "mass": 40,
+     "phases": [
+       {"threshold": 1.0, "rest": 1.2, "sequence": ["sweep", "ring", "sweep"], "random": ["sweep", "ring"]},
+       {"threshold": 0.66, "rest": 1.0, "sequence": ["darkness", "sweep", "ring"], "random": ["sweep", "darkness", "ring"]},
+       {"threshold": 0.33, "rest": 0.8, "sequence": ["darkness", "sweep", "darkness"], "random": ["sweep", "darkness", "ring", "summon"], "speed_mult": 1.2}
+     ],
+     "attacks": {
+       "sweep": {"telegraph": 1.0, "beams": 2, "length": 820, "width": 40, "duration": 2.6, "turn": 1.3, "damage": 18, "tick": 0.25},
+       "ring": {"telegraph": 0.8, "count": 24, "gap_degrees": 50, "proj_speed": 230, "damage": 15},
+       "darkness": {"telegraph": 1.4, "duration": 3.5, "safe_radius": 150, "safe_count": 3, "dps": 18, "area": 700},
+       "summon": {"telegraph": 0.6, "enemy": "echo_hunter", "count": 6}
+     },
+     "rewards": {"scrap": 420, "field_data": 36},
+     "visual": {"shape": "archon", "color": "#ffd36e", "accent": "#8a5cff", "variants": ["#ffd36e", "#ff9a5a"]}},
+    {"id": "mangrove_colossus", "behavior": "boss",
+     "name": {"pt_BR": "Colosso Mangue", "en": "Mangrove Colossus"}, "desc": {"pt_BR": "Raízes e tubos industriais fundidos num gigante que espalha lodo.", "en": "Roots and pipes fused into a sludge-spreading giant."},
+     "hp": 15000, "speed": 50, "damage": 24, "radius": 64, "xp": 200, "resist": 0.25, "mass": 50,
+     "phases": [
+       {"threshold": 1.0, "rest": 1.3, "sequence": ["roots", "sludge", "roots"], "random": ["roots", "sludge"]},
+       {"threshold": 0.66, "rest": 1.1, "sequence": ["summon", "roots", "sludge"], "random": ["roots", "sludge", "summon"]},
+       {"threshold": 0.33, "rest": 0.9, "sequence": ["roots", "summon", "sludge", "roots"], "random": ["roots", "sludge", "summon"], "speed_mult": 1.25}
+     ],
+     "attacks": {
+       "roots": {"telegraph": 1.0, "lines": 4, "length": 520, "width": 46, "damage": 26},
+       "sludge": {"telegraph": 0.9, "count": 4, "radius": 110, "dps": 14, "life": 6.0, "spread": 320},
+       "summon": {"telegraph": 0.6, "enemy": "neon_slime", "count": 8}
+     },
+     "rewards": {"scrap": 480, "field_data": 42},
+     "visual": {"shape": "colossus", "color": "#5f9a4a", "accent": "#7cf5d0", "variants": ["#5f9a4a"]}}
+  ],
+  "drops": {
+    "xp_tiers": [{"min": 1, "color": "#7cf5d0", "size": 6}, {"min": 5, "color": "#3fa7ff", "size": 8}, {"min": 20, "color": "#c79bff", "size": 10}, {"min": 80, "color": "#ffb547", "size": 12}]
+  }
+}

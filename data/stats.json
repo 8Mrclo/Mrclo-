@@ -1,0 +1,25 @@
+{
+  "_doc": "Definição de estatísticas de combate. final = clamp((base + Σflat) × (1 + Σpct) × Π(1 + mult), min, max). Ver docs/FORMULAS.md.",
+  "stats": [
+    {"id": "max_hp", "base": 100, "min": 1, "max": 99999, "fmt": "int"},
+    {"id": "regen", "base": 0, "min": 0, "max": 60, "fmt": "dec"},
+    {"id": "move_speed", "base": 220, "min": 60, "max": 560, "fmt": "int"},
+    {"id": "armor", "base": 0, "min": 0, "max": 400, "fmt": "int"},
+    {"id": "dodge", "base": 0, "min": 0, "max": 0.6, "fmt": "pct"},
+    {"id": "damage_reduction", "base": 0, "min": 0, "max": 0.75, "fmt": "pct"},
+    {"id": "damage", "base": 1, "min": 0.1, "max": 60, "fmt": "mult"},
+    {"id": "attack_speed", "base": 1, "min": 0.2, "max": 5, "fmt": "mult"},
+    {"id": "cooldown", "base": 1, "min": 0.25, "max": 3, "fmt": "mult"},
+    {"id": "crit_chance", "base": 0.05, "min": 0, "max": 1, "fmt": "pct"},
+    {"id": "crit_mult", "base": 1.5, "min": 1, "max": 10, "fmt": "mult"},
+    {"id": "area", "base": 1, "min": 0.3, "max": 4, "fmt": "mult"},
+    {"id": "duration", "base": 1, "min": 0.3, "max": 4, "fmt": "mult"},
+    {"id": "projectile_speed", "base": 1, "min": 0.3, "max": 4, "fmt": "mult"},
+    {"id": "projectile_count", "base": 0, "min": 0, "max": 10, "fmt": "int"},
+    {"id": "pierce", "base": 0, "min": 0, "max": 20, "fmt": "int"},
+    {"id": "pickup", "base": 95, "min": 20, "max": 900, "fmt": "int"},
+    {"id": "xp_gain", "base": 1, "min": 0.1, "max": 5, "fmt": "mult"},
+    {"id": "luck", "base": 1, "min": 0, "max": 5, "fmt": "mult"},
+    {"id": "knockback", "base": 1, "min": 0, "max": 5, "fmt": "mult"}
+  ]
+}

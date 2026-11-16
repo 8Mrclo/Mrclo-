@@ -1,0 +1,95 @@
+{
+ "_doc": "Passos do tutorial contextual. context = tela/estado onde a dica aparece; complete_on = evento que conclui. skippable indica se pode ser ignorado com segurança.",
+ "steps": [
+  {
+   "id": "move",
+   "context": "battle_start",
+   "complete_on": "moved",
+   "skippable": false,
+   "text": {
+    "pt_BR": "Arraste o polegar em qualquer ponto da tela (ou use WASD/setas) para mover o agente.",
+    "en": "Drag anywhere (or WASD/arrows) to move."
+   }
+  },
+  {
+   "id": "collect_xp",
+   "context": "first_kill",
+   "complete_on": "PickupCollected",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Inimigos deixam fragmentos de experiência. Aproxime-se para coletá-los.",
+    "en": "Enemies drop XP fragments. Get close to collect them."
+   }
+  },
+  {
+   "id": "pick_ability",
+   "context": "level_up",
+   "complete_on": "AbilitySelected",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Escolha uma melhoria. Combine habilidades e módulos para formar evoluções.",
+    "en": "Choose an upgrade. Combine abilities and modules to evolve."
+   }
+  },
+  {
+   "id": "finish_mission",
+   "context": "battle_boss",
+   "complete_on": "MissionCompleted",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Derrote o chefe do setor para concluir a expedição.",
+    "en": "Defeat the sector boss to complete the expedition."
+   }
+  },
+  {
+   "id": "equip",
+   "context": "screen_equipment",
+   "complete_on": "ItemEquipped",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Toque em um item do inventário e equipe-o para fortalecer o agente.",
+    "en": "Tap an inventory item and equip it."
+   }
+  },
+  {
+   "id": "upgrade",
+   "context": "screen_equipment",
+   "complete_on": "EquipmentUpgraded",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Use sucata para melhorar um equipamento.",
+    "en": "Spend scrap to upgrade equipment."
+   }
+  },
+  {
+   "id": "store",
+   "context": "screen_store",
+   "complete_on": "StorePurchase",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Suprimentos gratuitos renovam diariamente. Nenhuma compra usa dinheiro real.",
+    "en": "Free supplies refresh daily. No real money."
+   }
+  },
+  {
+   "id": "agent",
+   "context": "screen_agents",
+   "complete_on": "ScreenVisited",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Cada agente tem uma habilidade exclusiva. Fragmentos desbloqueiam e evoluem agentes.",
+    "en": "Each agent has a unique trait."
+   }
+  },
+  {
+   "id": "research",
+   "context": "screen_workshop",
+   "complete_on": "ResearchPurchased",
+   "skippable": true,
+   "text": {
+    "pt_BR": "Dados de Campo compram pesquisas permanentes. Nós exigem seus pré-requisitos.",
+    "en": "Field Data buys permanent research."
+   }
+  }
+ ]
+}

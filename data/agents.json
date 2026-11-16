@@ -1,0 +1,114 @@
+{
+  "_doc": "Agentes jogáveis. 'visual' descreve a silhueta procedural (sem arte de terceiros). 'trait' é a habilidade exclusiva implementada em src/actors/agent_traits.gd.",
+  "level_costs": {"scrap_base": 120, "scrap_growth": 1.32, "shards_base": 4, "shards_step": 2},
+  "agents": [
+    {
+      "id": "lia",
+      "name": {"pt_BR": "Lia Maré", "en": "Lia Tide"},
+      "role": {"pt_BR": "Equilibrada · Coleta", "en": "Balanced · Collection"},
+      "desc": {"pt_BR": "Batedora da Farol Nove criada nos canais da Avenida Submersa. Lê correntes de energia como quem lê marés.", "en": "Farol Nove scout raised in the Submerged Avenue canals."},
+      "visual": {"body": "#3fd0c9", "accent": "#ffb547", "trim": "#0b2a33", "shape": "hood", "gear": "satchel"},
+      "start_ability": "disc_helix",
+      "base_mods": [{"stat": "pickup", "op": "pct", "value": 0.4}],
+      "per_level_mods": [{"stat": "max_hp", "op": "flat", "value": 4}, {"stat": "damage", "op": "pct", "value": 0.012}],
+      "trait": {"id": "tide_collector", "name": {"pt_BR": "Refluxo", "en": "Backflow"}, "desc": {"pt_BR": "A cada 18s, puxa todos os fragmentos de experiência visíveis.", "en": "Every 18s, pulls every visible XP fragment."}, "params": {"interval": 18}},
+      "unlock": {"type": "default"},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "+10% de ganho de experiência", "en": "+10% XP gain"}, "mods": [{"stat": "xp_gain", "op": "pct", "value": 0.1}]},
+        {"level": 10, "desc": {"pt_BR": "Refluxo a cada 13s", "en": "Backflow every 13s"}, "trait_params": {"interval": 13}},
+        {"level": 15, "desc": {"pt_BR": "+12% de área", "en": "+12% area"}, "mods": [{"stat": "area", "op": "pct", "value": 0.12}]}
+      ]
+    },
+    {
+      "id": "breno",
+      "name": {"pt_BR": "Breno Fase", "en": "Breno Phase"},
+      "role": {"pt_BR": "Velocidade · Esquiva", "en": "Speed · Evasion"},
+      "desc": {"pt_BR": "Mensageiro que atravessa distritos em minutos. Nunca fica parado tempo suficiente para ser atingido.", "en": "Courier who crosses districts in minutes."},
+      "visual": {"body": "#ff6f61", "accent": "#f2efe6", "trim": "#2a1630", "shape": "slim", "gear": "fins"},
+      "start_ability": "ion_arc",
+      "base_mods": [{"stat": "move_speed", "op": "pct", "value": 0.12}, {"stat": "dodge", "op": "flat", "value": 0.08}],
+      "per_level_mods": [{"stat": "max_hp", "op": "flat", "value": 3}, {"stat": "move_speed", "op": "pct", "value": 0.006}],
+      "trait": {"id": "phase_step", "name": {"pt_BR": "Passo de Fase", "en": "Phase Step"}, "desc": {"pt_BR": "Ao receber dano, ganha +45% de velocidade por 1,4s.", "en": "When hit, gain +45% speed for 1.4s."}, "params": {"bonus": 0.45, "seconds": 1.4}},
+      "unlock": {"type": "shards", "amount": 20},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "+4% de esquiva", "en": "+4% dodge"}, "mods": [{"stat": "dodge", "op": "flat", "value": 0.04}]},
+        {"level": 10, "desc": {"pt_BR": "Passo de Fase dura 2,2s", "en": "Phase Step lasts 2.2s"}, "trait_params": {"seconds": 2.2}},
+        {"level": 15, "desc": {"pt_BR": "+10% de velocidade de ataque", "en": "+10% attack speed"}, "mods": [{"stat": "attack_speed", "op": "pct", "value": 0.1}]}
+      ]
+    },
+    {
+      "id": "nara",
+      "name": {"pt_BR": "Nara Prisma", "en": "Nara Prism"},
+      "role": {"pt_BR": "Crítico · Divisão", "en": "Critical · Splitting"},
+      "desc": {"pt_BR": "Engenheira óptica que lapida cristais do Pulso em lentes de combate.", "en": "Optical engineer who cuts Pulse crystals into combat lenses."},
+      "visual": {"body": "#8a5cff", "accent": "#7cf5d0", "trim": "#1a1033", "shape": "visor", "gear": "prisms"},
+      "start_ability": "prism_shard",
+      "base_mods": [{"stat": "crit_chance", "op": "flat", "value": 0.08}, {"stat": "crit_mult", "op": "flat", "value": 0.2}],
+      "per_level_mods": [{"stat": "max_hp", "op": "flat", "value": 3}, {"stat": "crit_chance", "op": "flat", "value": 0.002}],
+      "trait": {"id": "prism_focus", "name": {"pt_BR": "Refração", "en": "Refraction"}, "desc": {"pt_BR": "Acertos críticos têm 22% de chance de gerar dois estilhaços.", "en": "Crits have 22% chance to spawn two shards."}, "params": {"chance": 0.22, "shard_pct": 0.35}},
+      "unlock": {"type": "shards", "amount": 30},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "+0,25 de multiplicador crítico", "en": "+0.25 crit multiplier"}, "mods": [{"stat": "crit_mult", "op": "flat", "value": 0.25}]},
+        {"level": 10, "desc": {"pt_BR": "Refração com 32% de chance", "en": "Refraction 32% chance"}, "trait_params": {"chance": 0.32}},
+        {"level": 15, "desc": {"pt_BR": "+1 perfuração", "en": "+1 pierce"}, "mods": [{"stat": "pierce", "op": "flat", "value": 1}]}
+      ]
+    },
+    {
+      "id": "caio",
+      "name": {"pt_BR": "Caio Ferro", "en": "Caio Iron"},
+      "role": {"pt_BR": "Resistência · Recuo", "en": "Toughness · Knockback"},
+      "desc": {"pt_BR": "Ex-estivador do porto que soldou a própria armadura com cascos de guindaste.", "en": "Former dock worker with crane-plate armor."},
+      "visual": {"body": "#ffb547", "accent": "#0f3b47", "trim": "#3a2410", "shape": "bulky", "gear": "shoulder"},
+      "start_ability": "reverse_pulse",
+      "base_mods": [{"stat": "max_hp", "op": "pct", "value": 0.3}, {"stat": "armor", "op": "flat", "value": 12}, {"stat": "knockback", "op": "pct", "value": 0.5}, {"stat": "move_speed", "op": "pct", "value": -0.06}],
+      "per_level_mods": [{"stat": "max_hp", "op": "flat", "value": 7}, {"stat": "armor", "op": "flat", "value": 0.6}],
+      "trait": {"id": "iron_bulwark", "name": {"pt_BR": "Muralha", "en": "Bulwark"}, "desc": {"pt_BR": "Um escudo absorve um golpe a cada 12s.", "en": "A shield absorbs one hit every 12s."}, "params": {"interval": 12}},
+      "unlock": {"type": "account_level", "value": 4},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "+0,6 de regeneração", "en": "+0.6 regen"}, "mods": [{"stat": "regen", "op": "flat", "value": 0.6}]},
+        {"level": 10, "desc": {"pt_BR": "Muralha a cada 8s", "en": "Bulwark every 8s"}, "trait_params": {"interval": 8}},
+        {"level": 15, "desc": {"pt_BR": "+6% de redução de dano", "en": "+6% damage reduction"}, "mods": [{"stat": "damage_reduction", "op": "flat", "value": 0.06}]}
+      ]
+    },
+    {
+      "id": "yumi",
+      "name": {"pt_BR": "Yumi Delta", "en": "Yumi Delta"},
+      "role": {"pt_BR": "Drones · Dispositivos", "en": "Drones · Devices"},
+      "desc": {"pt_BR": "Programadora autodidata que reprogramou as máquinas do Pulso para lutar ao seu lado.", "en": "Self-taught coder who reprograms Pulse machines."},
+      "visual": {"body": "#7cf5d0", "accent": "#ff6f61", "trim": "#0b2a33", "shape": "pack", "gear": "antenna"},
+      "start_ability": "coral_probe",
+      "base_mods": [{"stat": "duration", "op": "pct", "value": 0.1}],
+      "per_level_mods": [{"stat": "max_hp", "op": "flat", "value": 3}, {"stat": "damage", "op": "pct", "value": 0.01}],
+      "trait": {"id": "drone_link", "name": {"pt_BR": "Elo de Enxame", "en": "Swarm Link"}, "desc": {"pt_BR": "Habilidades com a marca dispositivo causam +20% de dano.", "en": "Device-tagged abilities deal +20% damage."}, "params": {"bonus": 0.2, "tag": "device"}},
+      "unlock": {"type": "shards", "amount": 40},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "-6% de recarga", "en": "-6% cooldown"}, "mods": [{"stat": "cooldown", "op": "pct", "value": -0.06}]},
+        {"level": 10, "desc": {"pt_BR": "Elo de Enxame +35%", "en": "Swarm Link +35%"}, "trait_params": {"bonus": 0.35}},
+        {"level": 15, "desc": {"pt_BR": "+1 projétil", "en": "+1 projectile"}, "mods": [{"stat": "projectile_count", "op": "flat", "value": 1}]}
+      ]
+    },
+    {
+      "id": "orfeu",
+      "name": {"pt_BR": "Orfeu", "en": "Orfeu"},
+      "role": {"pt_BR": "Avançado · Risco", "en": "Advanced · Risk"},
+      "desc": {"pt_BR": "Sobrevivente do epicentro do Pulso. Seu corpo regenera rápido, mas a energia o consome.", "en": "Survivor of the Pulse epicenter."},
+      "visual": {"body": "#f2efe6", "accent": "#8a5cff", "trim": "#ff6f61", "shape": "cloak", "gear": "halo"},
+      "start_ability": "suction_vortex",
+      "base_mods": [{"stat": "max_hp", "op": "pct", "value": -0.15}, {"stat": "regen", "op": "flat", "value": 1.2}, {"stat": "damage", "op": "pct", "value": 0.1}],
+      "per_level_mods": [{"stat": "regen", "op": "flat", "value": 0.08}, {"stat": "damage", "op": "pct", "value": 0.015}],
+      "trait": {"id": "edge_of_tide", "name": {"pt_BR": "Limiar", "en": "Threshold"}, "desc": {"pt_BR": "Abaixo de 40% de vida: +30% de dano e regeneração dobrada.", "en": "Below 40% HP: +30% damage and double regen."}, "params": {"threshold": 0.4, "damage": 0.3, "regen_mult": 2.0}},
+      "unlock": {"type": "mission", "value": "terminal_solar"},
+      "max_level": 20,
+      "milestones": [
+        {"level": 5, "desc": {"pt_BR": "+0,5 de regeneração", "en": "+0.5 regen"}, "mods": [{"stat": "regen", "op": "flat", "value": 0.5}]},
+        {"level": 10, "desc": {"pt_BR": "Limiar a partir de 55%", "en": "Threshold at 55%"}, "trait_params": {"threshold": 0.55}},
+        {"level": 15, "desc": {"pt_BR": "+8% de chance crítica", "en": "+8% crit chance"}, "mods": [{"stat": "crit_chance", "op": "flat", "value": 0.08}]}
+      ]
+    }
+  ]
+}

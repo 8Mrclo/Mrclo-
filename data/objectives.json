@@ -1,0 +1,697 @@
+{
+ "_doc": "Objetivos reativos a eventos. mode=sum acumula 'amount'; mode=max guarda o maior valor. filter compara chaves de 'data' do evento. Textos: locale 'objective.<Evento>'.",
+ "daily_active": 5,
+ "weekly_active": 5,
+ "tutorial": [
+  {
+   "id": "tut_01",
+   "event": "MissionStarted",
+   "target": 1,
+   "reward": {
+    "scrap": 100
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_02",
+   "event": "EnemyDefeated",
+   "target": 50,
+   "reward": {
+    "scrap": 100
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_03",
+   "event": "AbilitySelected",
+   "target": 3,
+   "reward": {
+    "prisms": 10
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_04",
+   "event": "RunLevelReached",
+   "target": 5,
+   "reward": {
+    "scrap": 150
+   },
+   "mode": "max"
+  },
+  {
+   "id": "tut_05",
+   "event": "ItemEquipped",
+   "target": 1,
+   "reward": {
+    "scrap": 150
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_06",
+   "event": "EquipmentUpgraded",
+   "target": 1,
+   "reward": {
+    "field_data": 10
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_07",
+   "event": "MissionCompleted",
+   "target": 1,
+   "reward": {
+    "prisms": 20
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_08",
+   "event": "ScreenVisited",
+   "target": 1,
+   "reward": {
+    "scrap": 100
+   },
+   "mode": "sum",
+   "filter": {
+    "screen": "store"
+   }
+  },
+  {
+   "id": "tut_09",
+   "event": "ScreenVisited",
+   "target": 1,
+   "reward": {
+    "scrap": 100
+   },
+   "mode": "sum",
+   "filter": {
+    "screen": "agents"
+   }
+  },
+  {
+   "id": "tut_10",
+   "event": "ResearchPurchased",
+   "target": 1,
+   "reward": {
+    "field_data": 15
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_11",
+   "event": "EliteDefeated",
+   "target": 1,
+   "reward": {
+    "prisms": 20
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_12",
+   "event": "EvolutionFormed",
+   "target": 1,
+   "reward": {
+    "prisms": 30
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_13",
+   "event": "BossDefeated",
+   "target": 1,
+   "reward": {
+    "prisms": 30
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_14",
+   "event": "EquipmentFused",
+   "target": 1,
+   "reward": {
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_15",
+   "event": "ObjectiveClaimed",
+   "target": 3,
+   "reward": {
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_16",
+   "event": "AgentUnlocked",
+   "target": 1,
+   "reward": {
+    "prisms": 30
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_17",
+   "event": "StorePurchase",
+   "target": 1,
+   "reward": {
+    "scrap": 200
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_18",
+   "event": "AccountLevel",
+   "target": 5,
+   "reward": {
+    "prisms": 40
+   },
+   "mode": "max"
+  },
+  {
+   "id": "tut_19",
+   "event": "StarsEarned",
+   "target": 3,
+   "reward": {
+    "field_data": 30
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "tut_20",
+   "event": "MissionCompleted",
+   "target": 3,
+   "reward": {
+    "prisms": 60,
+    "shard_breno": 10
+   },
+   "mode": "sum"
+  }
+ ],
+ "daily": [
+  {
+   "id": "day_01",
+   "event": "EnemyDefeated",
+   "target": 300,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_02",
+   "event": "EnemyDefeated",
+   "target": 600,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_03",
+   "event": "EnemyDefeated",
+   "target": 1000,
+   "reward": {
+    "prisms": 15
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_04",
+   "event": "EnemyDefeated",
+   "target": 1500,
+   "reward": {
+    "scrap": 200
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_05",
+   "event": "EnemyDefeated",
+   "target": 2500,
+   "reward": {
+    "field_data": 24
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_06",
+   "event": "EliteDefeated",
+   "target": 1,
+   "reward": {
+    "prisms": 5
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_07",
+   "event": "EliteDefeated",
+   "target": 2,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_08",
+   "event": "EliteDefeated",
+   "target": 3,
+   "reward": {
+    "scrap": 160
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_09",
+   "event": "BossDefeated",
+   "target": 1,
+   "reward": {
+    "prisms": 5
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_10",
+   "event": "DamageDealt",
+   "target": 20000,
+   "reward": {
+    "field_data": 8
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_11",
+   "event": "DamageDealt",
+   "target": 60000,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_12",
+   "event": "DamageDealt",
+   "target": 150000,
+   "reward": {
+    "prisms": 15
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_13",
+   "event": "AbilitySelected",
+   "target": 8,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_14",
+   "event": "AbilitySelected",
+   "target": 15,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_15",
+   "event": "AbilitySelected",
+   "target": 25,
+   "reward": {
+    "field_data": 16
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_16",
+   "event": "MissionStarted",
+   "target": 1,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_17",
+   "event": "MissionStarted",
+   "target": 2,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_18",
+   "event": "MissionStarted",
+   "target": 3,
+   "reward": {
+    "prisms": 15
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_19",
+   "event": "MissionCompleted",
+   "target": 1,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_20",
+   "event": "MissionCompleted",
+   "target": 2,
+   "reward": {
+    "field_data": 12
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_21",
+   "event": "EquipmentUpgraded",
+   "target": 1,
+   "reward": {
+    "prisms": 5
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_22",
+   "event": "EquipmentUpgraded",
+   "target": 3,
+   "reward": {
+    "scrap": 120
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_23",
+   "event": "EquipmentUpgraded",
+   "target": 5,
+   "reward": {
+    "scrap": 160
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_24",
+   "event": "CurrencySpent",
+   "target": 500,
+   "reward": {
+    "prisms": 5
+   },
+   "mode": "sum",
+   "filter": {
+    "currency": "scrap"
+   }
+  },
+  {
+   "id": "day_25",
+   "event": "CurrencySpent",
+   "target": 1500,
+   "reward": {
+    "field_data": 12
+   },
+   "mode": "sum",
+   "filter": {
+    "currency": "scrap"
+   }
+  },
+  {
+   "id": "day_26",
+   "event": "SurviveSeconds",
+   "target": 300,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_27",
+   "event": "SurviveSeconds",
+   "target": 600,
+   "reward": {
+    "prisms": 10
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_28",
+   "event": "SurviveSeconds",
+   "target": 900,
+   "reward": {
+    "scrap": 160
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "day_29",
+   "event": "RunLevelReached",
+   "target": 10,
+   "reward": {
+    "scrap": 80
+   },
+   "mode": "max"
+  },
+  {
+   "id": "day_30",
+   "event": "RunLevelReached",
+   "target": 15,
+   "reward": {
+    "field_data": 12
+   },
+   "mode": "max"
+  }
+ ],
+ "weekly": [
+  {
+   "id": "week_01",
+   "event": "EnemyDefeated",
+   "target": 5000,
+   "reward": {
+    "prisms": 30,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_02",
+   "event": "EnemyDefeated",
+   "target": 12000,
+   "reward": {
+    "field_data": 60,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_03",
+   "event": "EnemyDefeated",
+   "target": 25000,
+   "reward": {
+    "prisms": 70,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_04",
+   "event": "EliteDefeated",
+   "target": 8,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_05",
+   "event": "EliteDefeated",
+   "target": 15,
+   "reward": {
+    "prisms": 50,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_06",
+   "event": "BossDefeated",
+   "target": 3,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_07",
+   "event": "BossDefeated",
+   "target": 6,
+   "reward": {
+    "prisms": 50,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_08",
+   "event": "DamageDealt",
+   "target": 500000,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_09",
+   "event": "DamageDealt",
+   "target": 1500000,
+   "reward": {
+    "prisms": 50,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_10",
+   "event": "MissionCompleted",
+   "target": 5,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_11",
+   "event": "MissionCompleted",
+   "target": 10,
+   "reward": {
+    "prisms": 50,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_12",
+   "event": "EquipmentUpgraded",
+   "target": 10,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_13",
+   "event": "EquipmentUpgraded",
+   "target": 25,
+   "reward": {
+    "prisms": 50,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_14",
+   "event": "EquipmentFused",
+   "target": 2,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_15",
+   "event": "CurrencySpent",
+   "target": 5000,
+   "reward": {
+    "prisms": 30,
+    "scrap": 300
+   },
+   "mode": "sum",
+   "filter": {
+    "currency": "scrap"
+   }
+  },
+  {
+   "id": "week_16",
+   "event": "SurviveSeconds",
+   "target": 3600,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_17",
+   "event": "ResearchPurchased",
+   "target": 2,
+   "reward": {
+    "prisms": 30,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_18",
+   "event": "CrateOpened",
+   "target": 3,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_19",
+   "event": "EvolutionFormed",
+   "target": 4,
+   "reward": {
+    "prisms": 30,
+    "scrap": 300
+   },
+   "mode": "sum"
+  },
+  {
+   "id": "week_20",
+   "event": "ObjectiveClaimed",
+   "target": 15,
+   "reward": {
+    "field_data": 40,
+    "op_seals": 1
+   },
+   "mode": "sum"
+  }
+ ],
+ "milestones": [
+  {
+   "id": "ms_daily_points",
+   "points": [
+    {
+     "at": 3,
+     "reward": {
+      "scrap": 200
+     }
+    },
+    {
+     "at": 5,
+     "reward": {
+      "prisms": 20,
+      "op_seals": 1
+     }
+    }
+   ]
+  }
+ ]
+}
