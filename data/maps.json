@@ -12,15 +12,15 @@
       "hazards": [{"type": "slow_zone", "count": 8, "radius": 115, "factor": 0.62, "color": "#3fa7ff"}],
       "variant": 0,
       "waves": [
-        {"from": 0, "to": 60, "budget": 1.5, "pool": [["scrap_sniffer", 10], ["glass_wasp", 2]]},
-        {"from": 60, "to": 150, "budget": 2.6, "pool": [["scrap_sniffer", 8], ["glass_wasp", 4], ["rust_hull", 2]]},
-        {"from": 150, "to": 240, "budget": 3.8, "pool": [["scrap_sniffer", 6], ["glass_wasp", 4], ["rust_hull", 3], ["orphan_turret", 2]]},
-        {"from": 240, "to": 330, "budget": 5.0, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["orphan_turret", 2], ["neon_slime", 3], ["echo_hunter", 2]]},
-        {"from": 330, "to": 420, "budget": 6.4, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["rust_hull", 3], ["neon_slime", 3], ["magnetic_shepherd", 1], ["echo_hunter", 2]]},
-        {"from": 420, "to": 540, "budget": 8.0, "pool": [["scrap_sniffer", 4], ["glass_wasp", 4], ["rust_hull", 4], ["orphan_turret", 2], ["neon_slime", 3], ["magnetic_shepherd", 2], ["echo_hunter", 3], ["moulder", 1]]},
-        {"from": 540, "to": 99999, "budget": 4.5, "pool": [["scrap_sniffer", 6], ["rust_hull", 2], ["glass_wasp", 3]]}
+        {"from": 0, "to": 60, "budget": 2.4, "pool": [["scrap_sniffer", 10], ["glass_wasp", 2]]},
+        {"from": 60, "to": 150, "budget": 4.16, "pool": [["scrap_sniffer", 8], ["glass_wasp", 4], ["rust_hull", 2]]},
+        {"from": 150, "to": 240, "budget": 6.08, "pool": [["scrap_sniffer", 6], ["glass_wasp", 4], ["rust_hull", 3], ["orphan_turret", 2]]},
+        {"from": 240, "to": 330, "budget": 8.0, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["orphan_turret", 2], ["neon_slime", 3], ["echo_hunter", 2]]},
+        {"from": 330, "to": 420, "budget": 10.24, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["rust_hull", 3], ["neon_slime", 3], ["magnetic_shepherd", 1], ["echo_hunter", 2]]},
+        {"from": 420, "to": 540, "budget": 12.8, "pool": [["scrap_sniffer", 4], ["glass_wasp", 4], ["rust_hull", 4], ["orphan_turret", 2], ["neon_slime", 3], ["magnetic_shepherd", 2], ["echo_hunter", 3], ["moulder", 1]]},
+        {"from": 540, "to": 99999, "budget": 7.2, "pool": [["scrap_sniffer", 6], ["rust_hull", 2], ["glass_wasp", 3]]}
       ],
-      "min_alive": [[0, 8], [120, 24], [300, 44], [480, 66]],
+      "min_alive": [[0, 13], [120, 40], [300, 74], [480, 112]],
       "events": [
         {"t": 75, "type": "ring", "enemy": "scrap_sniffer", "count": 22},
         {"t": 180, "type": "elite", "enemy": "elite_rust_titan"},
@@ -29,7 +29,7 @@
         {"t": 450, "type": "ring", "enemy": "rust_hull", "count": 16},
         {"t": 500, "type": "elite", "enemy": "elite_shepherd_prime"}
       ],
-      "scaling": {"hp": 1.0, "damage": 1.0},
+      "scaling": {"hp": 0.9, "damage": 0.8},
       "rewards": {"clear": {"scrap": 600, "field_data": 30, "account_xp": 120}, "fail_ratio": 0.45, "per_minute": {"scrap": 35, "account_xp": 8}, "first_clear": {"prisms": 80, "shard_breno": 10, "item": {"def": "wpn_tide_staff", "rarity": "adjusted"}}, "stars": [{"prisms": 20}, {"field_data": 20}, {"prisms": 40, "shard_nara": 6}]},
       "objectives": [
         {"type": "kills", "target": 900},
@@ -48,12 +48,12 @@
       "hazards": [{"type": "pulse_zone", "count": 6, "radius": 125, "period": 7.0, "telegraph": 1.2, "damage": 14, "color": "#c79bff"}],
       "variant": 1,
       "waves": [
-        {"from": 0, "to": 70, "budget": 2.0, "pool": [["glass_wasp", 8], ["scrap_sniffer", 4]]},
-        {"from": 70, "to": 180, "budget": 3.6, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 1], ["orphan_turret", 3], ["scrap_sniffer", 4]]},
-        {"from": 180, "to": 300, "budget": 5.6, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 2], ["orphan_turret", 3], ["moulder", 2], ["echo_hunter", 2]]},
-        {"from": 300, "to": 99999, "budget": 6.0, "pool": [["glass_wasp", 6], ["orphan_turret", 3], ["rust_hull", 2], ["moulder", 2]]}
+        {"from": 0, "to": 70, "budget": 3.2, "pool": [["glass_wasp", 8], ["scrap_sniffer", 4]]},
+        {"from": 70, "to": 180, "budget": 5.76, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 1], ["orphan_turret", 3], ["scrap_sniffer", 4]]},
+        {"from": 180, "to": 300, "budget": 8.96, "pool": [["glass_wasp", 6], ["magnetic_shepherd", 2], ["orphan_turret", 3], ["moulder", 2], ["echo_hunter", 2]]},
+        {"from": 300, "to": 99999, "budget": 9.6, "pool": [["glass_wasp", 6], ["orphan_turret", 3], ["rust_hull", 2], ["moulder", 2]]}
       ],
-      "min_alive": [[0, 10], [120, 30], [260, 52]],
+      "min_alive": [[0, 17], [120, 51], [260, 88]],
       "events": [
         {"t": 60, "type": "swarm", "enemy": "glass_wasp", "count": 26},
         {"t": 150, "type": "elite", "enemy": "elite_wasp_matriarch"},
@@ -74,12 +74,12 @@
       "hazards": [{"type": "flare", "interval": 11.0, "telegraph": 1.3, "width": 70, "damage": 18, "color": "#ffd36e"}],
       "variant": 2,
       "waves": [
-        {"from": 0, "to": 70, "budget": 2.2, "pool": [["scrap_sniffer", 6], ["echo_hunter", 3]]},
-        {"from": 70, "to": 180, "budget": 4.0, "pool": [["scrap_sniffer", 5], ["echo_hunter", 3], ["orphan_turret", 3], ["rust_hull", 2]]},
-        {"from": 180, "to": 300, "budget": 6.0, "pool": [["echo_hunter", 4], ["orphan_turret", 3], ["rust_hull", 3], ["neon_slime", 2], ["magnetic_shepherd", 1]]},
-        {"from": 300, "to": 99999, "budget": 6.2, "pool": [["echo_hunter", 3], ["scrap_sniffer", 6], ["rust_hull", 2]]}
+        {"from": 0, "to": 70, "budget": 3.52, "pool": [["scrap_sniffer", 6], ["echo_hunter", 3]]},
+        {"from": 70, "to": 180, "budget": 6.4, "pool": [["scrap_sniffer", 5], ["echo_hunter", 3], ["orphan_turret", 3], ["rust_hull", 2]]},
+        {"from": 180, "to": 300, "budget": 9.6, "pool": [["echo_hunter", 4], ["orphan_turret", 3], ["rust_hull", 3], ["neon_slime", 2], ["magnetic_shepherd", 1]]},
+        {"from": 300, "to": 99999, "budget": 9.92, "pool": [["echo_hunter", 3], ["scrap_sniffer", 6], ["rust_hull", 2]]}
       ],
-      "min_alive": [[0, 10], [120, 32], [260, 54]],
+      "min_alive": [[0, 17], [120, 54], [260, 91]],
       "events": [
         {"t": 90, "type": "ring", "enemy": "echo_hunter", "count": 14},
         {"t": 160, "type": "elite", "enemy": "elite_hunter_alpha"},
@@ -100,12 +100,12 @@
       "hazards": [{"type": "dot_zone", "count": 8, "radius": 100, "dps": 6, "color": "#b2f56a"}],
       "variant": 1,
       "waves": [
-        {"from": 0, "to": 70, "budget": 2.4, "pool": [["neon_slime", 5], ["scrap_sniffer", 5]]},
-        {"from": 70, "to": 180, "budget": 4.4, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["scrap_sniffer", 4]]},
-        {"from": 180, "to": 300, "budget": 6.6, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["magnetic_shepherd", 2], ["glass_wasp", 3]]},
-        {"from": 300, "to": 99999, "budget": 6.4, "pool": [["neon_slime", 5], ["scrap_sniffer", 5], ["rust_hull", 2]]}
+        {"from": 0, "to": 70, "budget": 3.84, "pool": [["neon_slime", 5], ["scrap_sniffer", 5]]},
+        {"from": 70, "to": 180, "budget": 7.04, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["scrap_sniffer", 4]]},
+        {"from": 180, "to": 300, "budget": 10.56, "pool": [["neon_slime", 5], ["rust_hull", 3], ["moulder", 2], ["magnetic_shepherd", 2], ["glass_wasp", 3]]},
+        {"from": 300, "to": 99999, "budget": 10.24, "pool": [["neon_slime", 5], ["scrap_sniffer", 5], ["rust_hull", 2]]}
       ],
-      "min_alive": [[0, 12], [120, 34], [260, 56]],
+      "min_alive": [[0, 20], [120, 57], [260, 95]],
       "events": [
         {"t": 80, "type": "swarm", "enemy": "neon_slime", "count": 18},
         {"t": 170, "type": "elite", "enemy": "elite_rust_titan"},
@@ -126,12 +126,12 @@
       "hazards": [{"type": "debris", "interval": 4.5, "telegraph": 1.1, "radius": 75, "damage": 20, "color": "#ff6f61"}],
       "variant": 2,
       "waves": [
-        {"from": 0, "to": 80, "budget": 2.8, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["echo_hunter", 2]]},
-        {"from": 80, "to": 200, "budget": 5.0, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["neon_slime", 3], ["glass_wasp", 3]]},
-        {"from": 200, "to": 340, "budget": 7.4, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["magnetic_shepherd", 2], ["moulder", 2], ["neon_slime", 3]]},
-        {"from": 340, "to": 99999, "budget": 7.0, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["glass_wasp", 4]]}
+        {"from": 0, "to": 80, "budget": 4.48, "pool": [["scrap_sniffer", 5], ["glass_wasp", 4], ["echo_hunter", 2]]},
+        {"from": 80, "to": 200, "budget": 8.0, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["neon_slime", 3], ["glass_wasp", 3]]},
+        {"from": 200, "to": 340, "budget": 11.84, "pool": [["rust_hull", 3], ["orphan_turret", 3], ["echo_hunter", 3], ["magnetic_shepherd", 2], ["moulder", 2], ["neon_slime", 3]]},
+        {"from": 340, "to": 99999, "budget": 11.2, "pool": [["scrap_sniffer", 5], ["rust_hull", 3], ["glass_wasp", 4]]}
       ],
-      "min_alive": [[0, 14], [120, 36], [280, 60]],
+      "min_alive": [[0, 23], [120, 61], [280, 102]],
       "events": [
         {"t": 120, "type": "elite", "enemy": "elite_shepherd_prime"},
         {"t": 210, "type": "boss_mid", "enemy": "silica_queen", "hp_mult": 0.5},
@@ -157,7 +157,7 @@
     {"id": "swift_horde", "name": {"pt_BR": "Horda Veloz", "en": "Swift Horde"}, "desc": {"pt_BR": "Inimigos 20% mais rápidos.", "en": "Enemies 20% faster."}, "enemy_speed": 1.2},
     {"id": "rich_veins", "name": {"pt_BR": "Veios Ricos", "en": "Rich Veins"}, "desc": {"pt_BR": "+50% de experiência.", "en": "+50% XP."}, "player_mods": [{"stat": "xp_gain", "op": "pct", "value": 0.5}]},
     {"id": "glass_cannon", "name": {"pt_BR": "Canhão de Vidro", "en": "Glass Cannon"}, "desc": {"pt_BR": "+50% de dano, -30% de vida.", "en": "+50% damage, -30% HP."}, "player_mods": [{"stat": "damage", "op": "mult", "value": 0.5}, {"stat": "max_hp", "op": "mult", "value": -0.3}]},
-    {"id": "fragile_swarm", "name": {"pt_BR": "Enxame Frágil", "en": "Fragile Swarm"}, "desc": {"pt_BR": "Inimigos com -30% de vida, +40% de quantidade.", "en": "Enemies -30% HP, +40% count."}, "enemy_hp": 0.7, "budget": 1.4},
+    {"id": "fragile_swarm", "name": {"pt_BR": "Enxame Frágil", "en": "Fragile Swarm"}, "desc": {"pt_BR": "Inimigos com -30% de vida, +40% de quantidade.", "en": "Enemies -30% HP, +40% count."}, "enemy_hp": 0.7, "budget": 2.24},
     {"id": "elite_parade", "name": {"pt_BR": "Desfile de Elites", "en": "Elite Parade"}, "desc": {"pt_BR": "Uma elite a cada minuto.", "en": "An elite every minute."}, "elite_interval": 60},
     {"id": "overclock", "name": {"pt_BR": "Sobrecarga", "en": "Overclock"}, "desc": {"pt_BR": "-25% de recarga, inimigos causam +25% de dano.", "en": "-25% cooldown, enemies +25% damage."}, "player_mods": [{"stat": "cooldown", "op": "pct", "value": -0.25}], "enemy_damage": 1.25},
     {"id": "wide_lens", "name": {"pt_BR": "Lente Larga", "en": "Wide Lens"}, "desc": {"pt_BR": "+30% de área e coleta.", "en": "+30% area and pickup."}, "player_mods": [{"stat": "area", "op": "pct", "value": 0.3}, {"stat": "pickup", "op": "pct", "value": 0.3}]},

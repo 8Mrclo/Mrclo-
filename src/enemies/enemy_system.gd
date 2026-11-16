@@ -16,6 +16,7 @@ var _lod_interval := 3
 var _separation := 0.55
 var _aura_timer := 0.0
 var boss: Enemy = null
+var _grid_valid := false
 
 
 func _init(b: Battle) -> void:
@@ -61,6 +62,7 @@ func spawn(id: String, pos: Vector2, champion: bool = false, extra_hp: float = 1
 
 func update(delta: float, frame: int) -> void:
 	grid.rebuild(active)
+	_grid_valid = true
 	var ppos: Vector2 = battle.player.position
 	var prad: float = battle.player.radius
 	_aura_timer -= delta
@@ -337,6 +339,9 @@ func _execute_elite(e: Enemy, skill: String, to_p: Vector2) -> void:
 # ---------------------------------------------------------------- queries
 
 func query(pos: Vector2, r: float) -> PackedInt32Array:
+	if not _grid_valid:
+		grid.rebuild(active)
+		_grid_valid = true
 	grid.query(pos, r + 64.0, qbuf)
 	return qbuf
 
@@ -366,6 +371,7 @@ func compact() -> void:
 		active[i] = active[active.size() - 1]
 		active.pop_back()
 		battle.pools.release(e)
+		_grid_valid = false
 
 
 func clear_all(include_bosses: bool) -> void:

@@ -69,7 +69,7 @@
   "bosses": [
     {"id": "abyssal_digger", "behavior": "boss",
      "name": {"pt_BR": "Escavadora Abissal", "en": "Abyssal Digger"}, "desc": {"pt_BR": "Máquina de obras submersas que perfura o asfalto e provoca tremores.", "en": "Underwater excavator that drills through asphalt."},
-     "hp": 9000, "speed": 75, "damage": 22, "radius": 58, "xp": 150, "resist": 0.2, "mass": 30,
+     "hp": 4200, "speed": 75, "damage": 22, "radius": 58, "xp": 150, "resist": 0.2, "mass": 30,
      "phases": [
        {"threshold": 1.0, "rest": 1.3, "sequence": ["charge", "quake", "charge"], "random": ["charge", "quake"]},
        {"threshold": 0.66, "rest": 1.0, "sequence": ["burrow", "charge", "quake"], "random": ["burrow", "quake", "charge"], "speed_mult": 1.15},
@@ -85,7 +85,7 @@
      "visual": {"shape": "digger", "color": "#c9822e", "accent": "#0b2a33", "variants": ["#c9822e"]}},
     {"id": "silica_queen", "behavior": "boss",
      "name": {"pt_BR": "Rainha de Sílica", "en": "Silica Queen"}, "desc": {"pt_BR": "Colmeia de vidro consciente. Seus espelhos multiplicam disparos.", "en": "Sentient glass hive whose mirrors multiply shots."},
-     "hp": 11000, "speed": 60, "damage": 18, "radius": 54, "xp": 160, "resist": 0.2, "mass": 30,
+     "hp": 5200, "speed": 60, "damage": 18, "radius": 54, "xp": 160, "resist": 0.2, "mass": 30,
      "phases": [
        {"threshold": 1.0, "rest": 1.2, "sequence": ["fan", "ring", "fan"], "random": ["fan", "ring"]},
        {"threshold": 0.66, "rest": 1.0, "sequence": ["mirrors", "fan", "ring"], "random": ["fan", "ring", "mirrors"]},
@@ -101,7 +101,7 @@
      "visual": {"shape": "queen", "color": "#bfe9ff", "accent": "#8a5cff", "variants": ["#bfe9ff"]}},
     {"id": "lighthouse_archon", "behavior": "boss",
      "name": {"pt_BR": "Arconte do Farol", "en": "Lighthouse Archon"}, "desc": {"pt_BR": "Antigo farol que absorveu o Pulso. Alterna feixes de luz e sombra perigosa.", "en": "Old lighthouse that absorbed the Pulse."},
-     "hp": 13000, "speed": 55, "damage": 20, "radius": 56, "xp": 180, "resist": 0.25, "mass": 40,
+     "hp": 6000, "speed": 55, "damage": 20, "radius": 56, "xp": 180, "resist": 0.25, "mass": 40,
      "phases": [
        {"threshold": 1.0, "rest": 1.2, "sequence": ["sweep", "ring", "sweep"], "random": ["sweep", "ring"]},
        {"threshold": 0.66, "rest": 1.0, "sequence": ["darkness", "sweep", "ring"], "random": ["sweep", "darkness", "ring"]},
@@ -117,7 +117,7 @@
      "visual": {"shape": "archon", "color": "#ffd36e", "accent": "#8a5cff", "variants": ["#ffd36e", "#ff9a5a"]}},
     {"id": "mangrove_colossus", "behavior": "boss",
      "name": {"pt_BR": "Colosso Mangue", "en": "Mangrove Colossus"}, "desc": {"pt_BR": "Raízes e tubos industriais fundidos num gigante que espalha lodo.", "en": "Roots and pipes fused into a sludge-spreading giant."},
-     "hp": 15000, "speed": 50, "damage": 24, "radius": 64, "xp": 200, "resist": 0.25, "mass": 50,
+     "hp": 7000, "speed": 50, "damage": 24, "radius": 64, "xp": 200, "resist": 0.25, "mass": 50,
      "phases": [
        {"threshold": 1.0, "rest": 1.3, "sequence": ["roots", "sludge", "roots"], "random": ["roots", "sludge"]},
        {"threshold": 0.66, "rest": 1.1, "sequence": ["summon", "roots", "sludge"], "random": ["roots", "sludge", "summon"]},
