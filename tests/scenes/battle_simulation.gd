@@ -13,6 +13,7 @@ var step := 1.0 / 30.0
 var standalone := true
 var report: Dictionary = {}
 var battle_ref: Battle
+var pre_battle: Callable
 
 
 func _ready() -> void:
@@ -27,14 +28,18 @@ func _ready() -> void:
 
 func run() -> Dictionary:
 	Saves.enabled = false
-	Game.set_data(SaveDefaults.create())
-	Game.on_new_profile()
+	if standalone:
+		Game.set_data(SaveDefaults.create())
+		Game.on_new_profile()
 	Settings.apply_all()
 	InputSetup.ensure_actions()
 	DebugTools.invincible = invincible
 	Game.pending_run = Missions.build_run_config(map_id, mode_id, "normal", 1234)
+	if pre_battle.is_valid():
+		pre_battle.call(Game.pending_run)
 	var battle: Battle = load("res://scenes/battle/battle.tscn").instantiate()
 	battle.set_process(false)
+	battle.test_mode = not standalone
 	battle_ref = battle
 	add_child(battle)
 	var t0 := Time.get_ticks_msec()
@@ -73,6 +78,9 @@ func run() -> Dictionary:
 		"build": battle.loadout.summary().map(func(x): return "%s:%d" % [x.id, x.level]),
 	}
 	DebugTools.invincible = false
+	if not battle.finished:
+		battle.finished = true
+	battle.queue_free()
 	if standalone:
 		print("SIMULAÇÃO: ", JSON.stringify(report))
 		get_tree().quit(0 if report.finished else 1)

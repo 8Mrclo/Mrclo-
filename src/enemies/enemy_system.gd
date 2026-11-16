@@ -141,7 +141,10 @@ func update(delta: float, frame: int) -> void:
 			if battle.device != null:
 				var dr: float = e.radius + battle.device_radius
 				if (battle.device.position - e.position).length_squared() < dr * dr:
-					battle.damage_device(e.damage * d * 1.5)
+					# Enemies that reach the relay discharge into it and are destroyed.
+					battle.damage_device(e.damage * (3.0 if e.is_elite else 1.0))
+					if not e.is_elite:
+						battle.kill_enemy(e, false)
 
 
 func _tick_status(e: Enemy, d: float) -> void:

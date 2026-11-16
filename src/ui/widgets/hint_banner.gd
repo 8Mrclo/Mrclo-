@@ -20,13 +20,13 @@ func _ready() -> void:
 	_label = UIKit.label("", 24, Palette.text(), true)
 	v.add_child(_label)
 	var row := UIKit.hbox(10)
-	_skip = UIKit.button(Loc.t("tutorial.skip"), func(): Tutorial.skip(_step_id); visible = false, "ghost", 56)
+	_skip = UIKit.button(Loc.t("tutorial.skip"), _on_skip, "ghost", 56)
 	row.add_child(_skip)
 	row.add_child(UIKit.spacer())
 	row.add_child(UIKit.button(Loc.t("tutorial.got_it"), func(): visible = false, "secondary", 56))
 	v.add_child(row)
 	Tutorial.step_shown.connect(_on_shown)
-	Tutorial.step_closed.connect(func(id): if id == _step_id: visible = false)
+	Tutorial.step_closed.connect(_on_closed)
 
 
 func _on_shown(step: Dictionary) -> void:
@@ -34,3 +34,13 @@ func _on_shown(step: Dictionary) -> void:
 	_label.text = Loc.text(step.text)
 	_skip.visible = bool(step.get("skippable", true))
 	visible = true
+
+
+func _on_skip() -> void:
+	Tutorial.skip(_step_id)
+	visible = false
+
+
+func _on_closed(id: String) -> void:
+	if id == _step_id:
+		visible = false

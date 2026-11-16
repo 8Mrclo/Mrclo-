@@ -62,6 +62,7 @@ var speed_mult := 1.0
 var speed_unlocked := false
 var aim_mode := "nearest"
 var _victory_at := -1.0
+var test_mode := false   # set by headless tests: no scene change on finish
 var _min_damage := 1.0
 var _num_window := 0.18
 var _contact_tick := 0.35
@@ -571,7 +572,8 @@ func finish(victory: bool, abandoned: bool = false) -> void:
 	Game.pending_run = {}
 	Saves.save_now()
 	Audio.set_duck(false)
-	Router.goto("battle_result")
+	if not test_mode:
+		Router.goto("battle_result")
 
 
 # ---------------------------------------------------------------- device
