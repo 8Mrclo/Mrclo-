@@ -1,3 +1,4 @@
+class_name RandomService
 extends Node
 ## RandomService (autoload "Rng").
 ## Named, independently seedable streams keep runs reproducible: the "run"

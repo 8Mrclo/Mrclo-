@@ -1,0 +1,52 @@
+class_name ThemeFactory
+extends RefCounted
+## Builds the global Theme in code (no binary theme asset).
+## Rounded-diagonal modular panels; buttons have pressed/hover/disabled states.
+
+
+static func build() -> Theme:
+	var th := Theme.new()
+	th.default_font_size = 24
+	var text := Palette.text()
+	th.set_color("font_color", "Label", text)
+	th.set_color("font_color", "Button", text)
+	th.set_color("font_hover_color", "Button", Color.WHITE)
+	th.set_color("font_pressed_color", "Button", Palette.AMBER)
+	th.set_color("font_disabled_color", "Button", Palette.text_muted() * Color(1, 1, 1, 0.6))
+	th.set_color("font_focus_color", "Button", Color.WHITE)
+	th.set_font_size("font_size", "Button", 24)
+	var border := Palette.border()
+	th.set_stylebox("normal", "Button", UIKit.box(Palette.panel_alt(), border, 2, 16))
+	th.set_stylebox("hover", "Button", UIKit.box(Palette.panel_alt().lightened(0.08), Palette.TEAL, 2, 16))
+	th.set_stylebox("pressed", "Button", UIKit.box(Palette.PETROL, Palette.AMBER, 3, 16))
+	th.set_stylebox("disabled", "Button", UIKit.box(Palette.panel_bg().darkened(0.3), border.darkened(0.4), 2, 16))
+	th.set_stylebox("focus", "Button", UIKit.box(Color(0, 0, 0, 0), Palette.AMBER, 3, 16))
+	th.set_stylebox("panel", "PanelContainer", UIKit.box(Palette.panel_bg(), border, 2, 18))
+	th.set_stylebox("panel", "Panel", UIKit.box(Palette.panel_bg(), border, 2, 18))
+	var sb_bg := UIKit.box(Palette.PETROL_DEEP, border, 1, 10)
+	var sb_fill := UIKit.box(Palette.TEAL, Color(0, 0, 0, 0), 0, 10)
+	th.set_stylebox("background", "ProgressBar", sb_bg)
+	th.set_stylebox("fill", "ProgressBar", sb_fill)
+	th.set_color("font_color", "ProgressBar", text)
+	th.set_constant("separation", "VBoxContainer", 12)
+	th.set_constant("separation", "HBoxContainer", 12)
+	th.set_stylebox("slider", "HSlider", UIKit.box(Palette.PETROL_DEEP, border, 1, 8))
+	th.set_stylebox("grabber_area", "HSlider", UIKit.box(Palette.TEAL, Color(0, 0, 0, 0), 0, 8))
+	th.set_stylebox("grabber_area_highlight", "HSlider", UIKit.box(Palette.MINT, Color(0, 0, 0, 0), 0, 8))
+	th.set_stylebox("normal", "LineEdit", UIKit.box(Palette.PETROL_DEEP, border, 2, 10))
+	th.set_stylebox("focus", "LineEdit", UIKit.box(Palette.PETROL_DEEP, Palette.AMBER, 2, 10))
+	th.set_color("font_color", "LineEdit", text)
+	th.set_font_size("font_size", "LineEdit", 26)
+	th.set_stylebox("panel", "PopupMenu", UIKit.box(Palette.panel_bg(), border, 2, 10))
+	th.set_font_size("font_size", "PopupMenu", 24)
+	th.set_color("font_color", "CheckButton", text)
+	th.set_font_size("font_size", "CheckButton", 24)
+	th.set_stylebox("normal", "OptionButton", UIKit.box(Palette.panel_alt(), border, 2, 12))
+	th.set_stylebox("hover", "OptionButton", UIKit.box(Palette.panel_alt(), Palette.TEAL, 2, 12))
+	th.set_stylebox("pressed", "OptionButton", UIKit.box(Palette.PETROL, Palette.AMBER, 2, 12))
+	th.set_stylebox("normal", "TabBar", UIKit.box(Palette.panel_bg(), border, 1, 10))
+	th.set_stylebox("scroll", "VScrollBar", UIKit.box(Color(0, 0, 0, 0.2), Color(0, 0, 0, 0), 0, 6))
+	th.set_stylebox("grabber", "VScrollBar", UIKit.box(Palette.PETROL_LIGHT, Color(0, 0, 0, 0), 0, 6))
+	th.set_stylebox("grabber_highlight", "VScrollBar", UIKit.box(Palette.TEAL, Color(0, 0, 0, 0), 0, 6))
+	th.set_stylebox("grabber_pressed", "VScrollBar", UIKit.box(Palette.MINT, Color(0, 0, 0, 0), 0, 6))
+	return th

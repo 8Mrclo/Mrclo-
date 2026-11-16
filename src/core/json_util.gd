@@ -30,7 +30,7 @@ static func _copy(v: Variant) -> Variant:
 	return v
 
 
-static func get_path(d: Dictionary, path: String, fallback: Variant = null) -> Variant:
+static func dig(d: Dictionary, path: String, fallback: Variant = null) -> Variant:
 	var cur: Variant = d
 	for part in path.split("."):
 		if cur is Dictionary and cur.has(part):
